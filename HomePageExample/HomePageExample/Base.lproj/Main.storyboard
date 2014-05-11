@@ -7,7 +7,7 @@
         <!--View Controller - Home-->
         <scene sceneID="K4y-T9-VyR">
             <objects>
-                <viewController id="gQW-bf-ifg" sceneMemberID="viewController">
+                <viewController id="gQW-bf-ifg" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CCX-Rd-nKb"/>
                         <viewControllerLayoutGuide type="bottom" id="qIx-Kg-RTZ"/>
@@ -193,10 +193,13 @@
                     <tabBarItem key="tabBarItem" title="Home" id="XCc-FZ-lrU"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1500"/>
+                    <connections>
+                        <outlet property="topLeftView" destination="ZtX-RA-7iB" id="y1Y-eL-DPT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3y-Cp-upO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="-2586"/>
+            <point key="canvasLocation" x="229" y="-2725"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="c2o-ru-joV">
@@ -234,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuE-OS-azP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="365" y="-759"/>
+            <point key="canvasLocation" x="1085" y="-1654"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
