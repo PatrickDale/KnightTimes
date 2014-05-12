@@ -21,6 +21,7 @@
 		D53CEF9C191175CE00974568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53CEF7E191175CD00974568 /* UIKit.framework */; };
 		D53CEFA4191175CE00974568 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D53CEFA2191175CE00974568 /* InfoPlist.strings */; };
 		D53CEFA6191175CE00974568 /* HomePageExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D53CEFA5191175CE00974568 /* HomePageExampleTests.m */; };
+		D5E2EF5819209A1A00546E9B /* CJ_Dale_Shot_Put.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5E2EF5719209A1900546E9B /* CJ_Dale_Shot_Put.jpg */; };
 		E8B62E5F19205B8F00E9D70D /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B62E5E19205B8F00E9D70D /* ScheduleViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		D53CEFA1191175CE00974568 /* HomePageExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomePageExampleTests-Info.plist"; sourceTree = "<group>"; };
 		D53CEFA3191175CE00974568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D53CEFA5191175CE00974568 /* HomePageExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageExampleTests.m; sourceTree = "<group>"; };
+		D5E2EF5719209A1900546E9B /* CJ_Dale_Shot_Put.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CJ_Dale_Shot_Put.jpg; path = Images.xcassets/CJ_Dale_Shot_Put.jpg; sourceTree = "<group>"; };
 		E8B62E5D1920592400E9D70D /* ScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		E8B62E5E19205B8F00E9D70D /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 		D53CEF80191175CE00974568 /* HomePageExample */ = {
 			isa = PBXGroup;
 			children = (
+				D5E2EF5719209A1900546E9B /* CJ_Dale_Shot_Put.jpg */,
 				D53CEF89191175CE00974568 /* AppDelegate.h */,
 				D53CEF8A191175CE00974568 /* AppDelegate.m */,
 				D53CEF8C191175CE00974568 /* Main.storyboard */,
@@ -235,6 +238,7 @@
 			files = (
 				D53CEF93191175CE00974568 /* Images.xcassets in Resources */,
 				D53CEF85191175CE00974568 /* InfoPlist.strings in Resources */,
+				D5E2EF5819209A1A00546E9B /* CJ_Dale_Shot_Put.jpg in Resources */,
 				D53CEF8E191175CE00974568 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,7 @@ NSArray *storyViewArray;
 @implementation ViewController
 
 @synthesize storyOneView, storyTwoView, storyThreeView, storyFourView, storyFiveView, storySixView, storySevenView, storyEightView, storyNineView, storyTenView, storyElevenView, storyTwelveView, storyThirteenView, storyFourteenView;
+@synthesize storyImage;
 
 
 - (void)viewDidLoad
@@ -25,13 +26,37 @@ NSArray *storyViewArray;
     for (int i = 0; i < [storyViewArray count]; i++) {
         UIView* field = [storyViewArray objectAtIndex: i];
         field.tag = i;
+        field.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     }
+    storyImage.image = [UIImage imageNamed:@"CJ_Dale_Shot_Put.jpg"];
+}
+
+/*
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    UILabel *yourLabel = [[UILabel alloc] initWithFrame:CGRectMake(storyTwoView.frame.origin.x, storyTwoView.frame.origin.y, storyTwoView.frame.size.width, storyTwoView.frame.size.height)];
+    [yourLabel setText:@"ONE TWO THREE FOUR FIVE"];
+    [yourLabel setTextColor:[UIColor yellowColor]];
+    [yourLabel setBackgroundColor:[UIColor clearColor]];
+    [yourLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 14.0f]];
+    yourLabel.numberOfLines = 0;
+    //yourLabel.lineBreakMode = NSLineBreakByCharWrapping;
+    [storyTwoView addSubview:yourLabel];
+}
+*/
+
+- (IBAction)returnToHome:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)gestureRecognized:(id)sender
 {
-    UIView* field = [(UITapGestureRecognizer*)sender view];
-    field.backgroundColor = [UIColor greenColor];
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"StoryViewController"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

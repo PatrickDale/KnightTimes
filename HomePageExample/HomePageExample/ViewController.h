@@ -25,7 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIView *storyTwelveView;
 @property (weak, nonatomic) IBOutlet UIView *storyThirteenView;
 @property (weak, nonatomic) IBOutlet UIView *storyFourteenView;
+@property (weak, nonatomic) IBOutlet UIImageView *storyImage;
 
+- (IBAction)returnToHome:(id)sender;
 
 
 
