@@ -21,6 +21,7 @@
 		D53CEF9C191175CE00974568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53CEF7E191175CD00974568 /* UIKit.framework */; };
 		D53CEFA4191175CE00974568 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D53CEFA2191175CE00974568 /* InfoPlist.strings */; };
 		D53CEFA6191175CE00974568 /* HomePageExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D53CEFA5191175CE00974568 /* HomePageExampleTests.m */; };
+		E8B62E5F19205B8F00E9D70D /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B62E5E19205B8F00E9D70D /* ScheduleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		D53CEFA1191175CE00974568 /* HomePageExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomePageExampleTests-Info.plist"; sourceTree = "<group>"; };
 		D53CEFA3191175CE00974568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D53CEFA5191175CE00974568 /* HomePageExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageExampleTests.m; sourceTree = "<group>"; };
+		E8B62E5D1920592400E9D70D /* ScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
+		E8B62E5E19205B8F00E9D70D /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				D53CEF89191175CE00974568 /* AppDelegate.h */,
 				D53CEF8A191175CE00974568 /* AppDelegate.m */,
 				D53CEF8C191175CE00974568 /* Main.storyboard */,
+				E8B62E5D1920592400E9D70D /* ScheduleViewController.h */,
+				E8B62E5E19205B8F00E9D70D /* ScheduleViewController.m */,
 				D53CEF8F191175CE00974568 /* ViewController.h */,
 				D53CEF90191175CE00974568 /* ViewController.m */,
 				D53CEF92191175CE00974568 /* Images.xcassets */,
@@ -252,6 +257,7 @@
 				D53CEF91191175CE00974568 /* ViewController.m in Sources */,
 				D53CEF8B191175CE00974568 /* AppDelegate.m in Sources */,
 				D53CEF87191175CE00974568 /* main.m in Sources */,
+				E8B62E5F19205B8F00E9D70D /* ScheduleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +464,7 @@
 				D53CEFAB191175CE00974568 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D53CEFAC191175CE00974568 /* Build configuration list for PBXNativeTarget "HomePageExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +473,7 @@
 				D53CEFAE191175CE00974568 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
