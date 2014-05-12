@@ -18,7 +18,11 @@ NSArray *storyViewArray;
 @synthesize storyOneView, storyTwoView, storyThreeView, storyFourView, storyFiveView, storySixView, storySevenView, storyEightView, storyNineView, storyTenView, storyElevenView, storyTwelveView, storyThirteenView, storyFourteenView;
 @synthesize storyImage;
 
-
+/***
+ * Initialize globals, and load the views.
+ * @Params: None
+ * @Returns: None
+ **/
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,6 +36,7 @@ NSArray *storyViewArray;
 }
 
 /*
+ UNIMPLEMENTED CODE
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
@@ -47,10 +52,20 @@ NSArray *storyViewArray;
 }
 */
 
+/***
+ * Return to home view when in story view.
+ * @Params: id
+ * @Return: IBAction
+ **/
 - (IBAction)returnToHome:(id)sender {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+/***
+ * When a tap gesture has been used, pull up storyView.
+ * @Params: id
+ * @Return: IBAction
+ **/
 - (IBAction)gestureRecognized:(id)sender
 {
     NSString * storyboardName = @"Main";
