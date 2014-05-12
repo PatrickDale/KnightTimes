@@ -21,6 +21,7 @@
 		D53CEF9C191175CE00974568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53CEF7E191175CD00974568 /* UIKit.framework */; };
 		D53CEFA4191175CE00974568 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D53CEFA2191175CE00974568 /* InfoPlist.strings */; };
 		D53CEFA6191175CE00974568 /* HomePageExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D53CEFA5191175CE00974568 /* HomePageExampleTests.m */; };
+		D5E2EF5819209A1A00546E9B /* CJ_Dale_Shot_Put.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5E2EF5719209A1900546E9B /* CJ_Dale_Shot_Put.jpg */; };
 		E8B62E5F19205B8F00E9D70D /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B62E5E19205B8F00E9D70D /* ScheduleViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -35,25 +36,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D53CEF77191175CD00974568 /* HomePageExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomePageExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D53CEF77191175CD00974568 /* KnightTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnightTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D53CEF7A191175CD00974568 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D53CEF7C191175CD00974568 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D53CEF7E191175CD00974568 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D53CEF82191175CE00974568 /* HomePageExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomePageExample-Info.plist"; sourceTree = "<group>"; };
+		D53CEF82191175CE00974568 /* KnightTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KnightTime-Info.plist"; sourceTree = "<group>"; };
 		D53CEF84191175CE00974568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D53CEF86191175CE00974568 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D53CEF88191175CE00974568 /* HomePageExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomePageExample-Prefix.pch"; sourceTree = "<group>"; };
+		D53CEF88191175CE00974568 /* KnightTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KnightTime-Prefix.pch"; sourceTree = "<group>"; };
 		D53CEF89191175CE00974568 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D53CEF8A191175CE00974568 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D53CEF8D191175CE00974568 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D53CEF8F191175CE00974568 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D53CEF90191175CE00974568 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D53CEF92191175CE00974568 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D53CEF98191175CE00974568 /* HomePageExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomePageExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D53CEF98191175CE00974568 /* KnightTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnightTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D53CEF99191175CE00974568 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D53CEFA1191175CE00974568 /* HomePageExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomePageExampleTests-Info.plist"; sourceTree = "<group>"; };
+		D53CEFA1191175CE00974568 /* KnightTimeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KnightTimeTests-Info.plist"; sourceTree = "<group>"; };
 		D53CEFA3191175CE00974568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D53CEFA5191175CE00974568 /* HomePageExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageExampleTests.m; sourceTree = "<group>"; };
+		D5E2EF5719209A1900546E9B /* CJ_Dale_Shot_Put.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CJ_Dale_Shot_Put.jpg; path = Images.xcassets/CJ_Dale_Shot_Put.jpg; sourceTree = "<group>"; };
 		E8B62E5D1920592400E9D70D /* ScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		E8B62E5E19205B8F00E9D70D /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,8 +87,8 @@
 		D53CEF6E191175CD00974568 = {
 			isa = PBXGroup;
 			children = (
-				D53CEF80191175CE00974568 /* HomePageExample */,
-				D53CEF9F191175CE00974568 /* HomePageExampleTests */,
+				D53CEF80191175CE00974568 /* KnightTime */,
+				D53CEF9F191175CE00974568 /* KnightTimeTests */,
 				D53CEF79191175CD00974568 /* Frameworks */,
 				D53CEF78191175CD00974568 /* Products */,
 			);
@@ -95,8 +97,8 @@
 		D53CEF78191175CD00974568 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D53CEF77191175CD00974568 /* HomePageExample.app */,
-				D53CEF98191175CE00974568 /* HomePageExampleTests.xctest */,
+				D53CEF77191175CD00974568 /* KnightTime.app */,
+				D53CEF98191175CE00974568 /* KnightTimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,9 +114,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D53CEF80191175CE00974568 /* HomePageExample */ = {
+		D53CEF80191175CE00974568 /* KnightTime */ = {
 			isa = PBXGroup;
 			children = (
+				D5E2EF5719209A1900546E9B /* CJ_Dale_Shot_Put.jpg */,
 				D53CEF89191175CE00974568 /* AppDelegate.h */,
 				D53CEF8A191175CE00974568 /* AppDelegate.m */,
 				D53CEF8C191175CE00974568 /* Main.storyboard */,
@@ -125,33 +128,35 @@
 				D53CEF92191175CE00974568 /* Images.xcassets */,
 				D53CEF81191175CE00974568 /* Supporting Files */,
 			);
+			name = KnightTime;
 			path = HomePageExample;
 			sourceTree = "<group>";
 		};
 		D53CEF81191175CE00974568 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D53CEF82191175CE00974568 /* HomePageExample-Info.plist */,
+				D53CEF82191175CE00974568 /* KnightTime-Info.plist */,
 				D53CEF83191175CE00974568 /* InfoPlist.strings */,
 				D53CEF86191175CE00974568 /* main.m */,
-				D53CEF88191175CE00974568 /* HomePageExample-Prefix.pch */,
+				D53CEF88191175CE00974568 /* KnightTime-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D53CEF9F191175CE00974568 /* HomePageExampleTests */ = {
+		D53CEF9F191175CE00974568 /* KnightTimeTests */ = {
 			isa = PBXGroup;
 			children = (
 				D53CEFA5191175CE00974568 /* HomePageExampleTests.m */,
 				D53CEFA0191175CE00974568 /* Supporting Files */,
 			);
+			name = KnightTimeTests;
 			path = HomePageExampleTests;
 			sourceTree = "<group>";
 		};
 		D53CEFA0191175CE00974568 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D53CEFA1191175CE00974568 /* HomePageExampleTests-Info.plist */,
+				D53CEFA1191175CE00974568 /* KnightTimeTests-Info.plist */,
 				D53CEFA2191175CE00974568 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -160,9 +165,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D53CEF76191175CD00974568 /* HomePageExample */ = {
+		D53CEF76191175CD00974568 /* KnightTime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D53CEFA9191175CE00974568 /* Build configuration list for PBXNativeTarget "HomePageExample" */;
+			buildConfigurationList = D53CEFA9191175CE00974568 /* Build configuration list for PBXNativeTarget "KnightTime" */;
 			buildPhases = (
 				D53CEF73191175CD00974568 /* Sources */,
 				D53CEF74191175CD00974568 /* Frameworks */,
@@ -172,14 +177,14 @@
 			);
 			dependencies = (
 			);
-			name = HomePageExample;
+			name = KnightTime;
 			productName = HomePageExample;
-			productReference = D53CEF77191175CD00974568 /* HomePageExample.app */;
+			productReference = D53CEF77191175CD00974568 /* KnightTime.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D53CEF97191175CE00974568 /* HomePageExampleTests */ = {
+		D53CEF97191175CE00974568 /* KnightTimeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D53CEFAC191175CE00974568 /* Build configuration list for PBXNativeTarget "HomePageExampleTests" */;
+			buildConfigurationList = D53CEFAC191175CE00974568 /* Build configuration list for PBXNativeTarget "KnightTimeTests" */;
 			buildPhases = (
 				D53CEF94191175CE00974568 /* Sources */,
 				D53CEF95191175CE00974568 /* Frameworks */,
@@ -190,9 +195,9 @@
 			dependencies = (
 				D53CEF9E191175CE00974568 /* PBXTargetDependency */,
 			);
-			name = HomePageExampleTests;
+			name = KnightTimeTests;
 			productName = HomePageExampleTests;
-			productReference = D53CEF98191175CE00974568 /* HomePageExampleTests.xctest */;
+			productReference = D53CEF98191175CE00974568 /* KnightTimeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D53CEF72191175CD00974568 /* Build configuration list for PBXProject "HomePageExample" */;
+			buildConfigurationList = D53CEF72191175CD00974568 /* Build configuration list for PBXProject "KnightTime" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -222,8 +227,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D53CEF76191175CD00974568 /* HomePageExample */,
-				D53CEF97191175CE00974568 /* HomePageExampleTests */,
+				D53CEF76191175CD00974568 /* KnightTime */,
+				D53CEF97191175CE00974568 /* KnightTimeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +240,7 @@
 			files = (
 				D53CEF93191175CE00974568 /* Images.xcassets in Resources */,
 				D53CEF85191175CE00974568 /* InfoPlist.strings in Resources */,
+				D5E2EF5819209A1A00546E9B /* CJ_Dale_Shot_Put.jpg in Resources */,
 				D53CEF8E191175CE00974568 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +280,7 @@
 /* Begin PBXTargetDependency section */
 		D53CEF9E191175CE00974568 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D53CEF76191175CD00974568 /* HomePageExample */;
+			target = D53CEF76191175CD00974568 /* KnightTime */;
 			targetProxy = D53CEF9D191175CE00974568 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -384,9 +390,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HomePageExample/HomePageExample-Prefix.pch";
-				INFOPLIST_FILE = "HomePageExample/HomePageExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HomePageExample/KnightTime-Prefix.pch";
+				INFOPLIST_FILE = "HomePageExample/KnightTime-Info.plist";
+				PRODUCT_NAME = KnightTime;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -398,9 +404,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HomePageExample/HomePageExample-Prefix.pch";
-				INFOPLIST_FILE = "HomePageExample/HomePageExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HomePageExample/KnightTime-Prefix.pch";
+				INFOPLIST_FILE = "HomePageExample/KnightTime-Info.plist";
+				PRODUCT_NAME = KnightTime;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -420,8 +426,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "HomePageExampleTests/HomePageExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "HomePageExampleTests/KnightTimeTests-Info.plist";
+				PRODUCT_NAME = KnightTimeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -438,8 +444,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HomePageExample/HomePageExample-Prefix.pch";
-				INFOPLIST_FILE = "HomePageExampleTests/HomePageExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "HomePageExampleTests/KnightTimeTests-Info.plist";
+				PRODUCT_NAME = KnightTimeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -448,7 +454,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D53CEF72191175CD00974568 /* Build configuration list for PBXProject "HomePageExample" */ = {
+		D53CEF72191175CD00974568 /* Build configuration list for PBXProject "KnightTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D53CEFA7191175CE00974568 /* Debug */,
@@ -457,7 +463,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D53CEFA9191175CE00974568 /* Build configuration list for PBXNativeTarget "HomePageExample" */ = {
+		D53CEFA9191175CE00974568 /* Build configuration list for PBXNativeTarget "KnightTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D53CEFAA191175CE00974568 /* Debug */,
@@ -466,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D53CEFAC191175CE00974568 /* Build configuration list for PBXNativeTarget "HomePageExampleTests" */ = {
+		D53CEFAC191175CE00974568 /* Build configuration list for PBXNativeTarget "KnightTimeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D53CEFAD191175CE00974568 /* Debug */,

@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D53CEF76191175CD00974568"
                BuildableName = "HomePageExample.app"
-               BlueprintName = "HomePageExample"
-               ReferencedContainer = "container:HomePageExample.xcodeproj">
+               BlueprintName = "KnightTime"
+               ReferencedContainer = "container:KnightTime.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D53CEF97191175CE00974568"
                BuildableName = "HomePageExampleTests.xctest"
-               BlueprintName = "HomePageExampleTests"
-               ReferencedContainer = "container:HomePageExample.xcodeproj">
+               BlueprintName = "KnightTimeTests"
+               ReferencedContainer = "container:KnightTime.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D53CEF76191175CD00974568"
             BuildableName = "HomePageExample.app"
-            BlueprintName = "HomePageExample"
-            ReferencedContainer = "container:HomePageExample.xcodeproj">
+            BlueprintName = "KnightTime"
+            ReferencedContainer = "container:KnightTime.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D53CEF76191175CD00974568"
             BuildableName = "HomePageExample.app"
-            BlueprintName = "HomePageExample"
-            ReferencedContainer = "container:HomePageExample.xcodeproj">
+            BlueprintName = "KnightTime"
+            ReferencedContainer = "container:KnightTime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D53CEF76191175CD00974568"
             BuildableName = "HomePageExample.app"
-            BlueprintName = "HomePageExample"
-            ReferencedContainer = "container:HomePageExample.xcodeproj">
+            BlueprintName = "KnightTime"
+            ReferencedContainer = "container:KnightTime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
