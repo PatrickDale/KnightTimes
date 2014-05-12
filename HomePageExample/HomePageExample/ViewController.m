@@ -30,19 +30,9 @@ NSArray *storyViewArray;
 
 - (IBAction)gestureRecognized:(id)sender
 {
-    storyOneView.backgroundColor = [UIColor greenColor];
+    UIView* field = [(UITapGestureRecognizer*)sender view];
+    field.backgroundColor = [UIColor greenColor];
 }
-/*
-- (IBAction)handleTap:(UITapGestureRecognizer *)sender
-{
-    storyOneView.backgroundColor = [UIColor greenColor];
-}
-
-- (void)handleTapGesture:(UITapGestureRecognizer *)gestureRecognizer
-{
-    UIView *story = (UIView *) gestureRecognizer.view;
-    story.backgroundColor = [UIColor greenColor];
-}*/
 
 - (void)didReceiveMemoryWarning
 {
