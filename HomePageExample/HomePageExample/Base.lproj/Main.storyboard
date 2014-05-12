@@ -250,6 +250,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="XCc-FZ-lrU"/>
+                    <navigationItem key="navigationItem" id="jQg-ZZ-XbW"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1500"/>
                     <connections>
@@ -343,6 +344,39 @@
             </objects>
             <point key="canvasLocation" x="229" y="-2725"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3xJ-k3-NWF">
+            <objects>
+                <viewController id="me1-gh-QY0" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tBL-50-Z5S"/>
+                        <viewControllerLayoutGuide type="bottom" id="v9y-kI-2fK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bB8-96-kq2" customClass="V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xch-HY-4du">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="jUs-wy-rAb">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="CE5-Lh-mhC">
+                                            <connections>
+                                                <segue destination="gQW-bf-ifg" kind="push" id="qRg-Nx-cqD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C6h-61-f2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="-2589"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="c2o-ru-joV">
             <objects>
@@ -387,4 +421,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="qRg-Nx-cqD"/>
+    </inferredMetricsTieBreakers>
 </document>
