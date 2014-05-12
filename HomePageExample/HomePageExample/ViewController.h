@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+
 @property (weak, nonatomic) IBOutlet UIView *storyOneView;
 @property (weak, nonatomic) IBOutlet UIView *storyTwoView;
 @property (weak, nonatomic) IBOutlet UIView *storyThreeView;
@@ -24,7 +25,15 @@
 @property (weak, nonatomic) IBOutlet UIView *storyTwelveView;
 @property (weak, nonatomic) IBOutlet UIView *storyThirteenView;
 @property (weak, nonatomic) IBOutlet UIView *storyFourteenView;
+
+
+
+
+
+
+
 - (IBAction)gestureRecognized:(id)sender;
 
 
 @end
+
