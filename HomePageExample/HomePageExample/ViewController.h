@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMLParser.h"
+#import "Story.h"
 
 @interface ViewController : UIViewController
 

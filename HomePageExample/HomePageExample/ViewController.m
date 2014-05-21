@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "XMLParser.h"
 
 @interface ViewController () {
-NSMutableArray *storyViewArray;
+    NSMutableArray *storyViewArray;
+    XMLParser *xmlParser;
 }
 @end
 
@@ -26,6 +28,8 @@ NSMutableArray *storyViewArray;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://apps.carleton.edu/athletics/feeds/blogs/varsity_athletics"];
+    NSLog(@"Story Count: %lu", (unsigned long)[[xmlParser stories] count]);
     //Set background collor of homeview
     homeViewController.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     //Create scrollable subview
@@ -78,10 +82,10 @@ NSMutableArray *storyViewArray;
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    
     //TEXT IN SUBVIEWS
     UILabel *yourLabel = [[UILabel alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x)-2, (((UIView*)[self.view viewWithTag:1]).frame.origin.y+((((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))), (((UIView*)[self.view viewWithTag:1]).frame.size.width)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(1.0/3.0))];
-    [yourLabel setText:@"Dsida, Tsutsui, Baker, and Stillerman named to D3baseball.com All-Region Team"];
+    Story *text = [[xmlParser stories] objectAtIndex:0];
+    [yourLabel setText:text.title];
     [yourLabel setTextColor:[UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1]];
     [yourLabel setBackgroundColor:[UIColor clearColor]];
     [yourLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 14.0f]];
