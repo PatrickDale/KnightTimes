@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D53CEF76191175CD00974568"
-               BuildableName = "HomePageExample.app"
+               BuildableName = "KnightTime.app"
                BlueprintName = "KnightTime"
                ReferencedContainer = "container:KnightTime.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D53CEF97191175CE00974568"
-               BuildableName = "HomePageExampleTests.xctest"
+               BuildableName = "KnightTimeTests.xctest"
                BlueprintName = "KnightTimeTests"
                ReferencedContainer = "container:KnightTime.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D53CEF76191175CD00974568"
-            BuildableName = "HomePageExample.app"
+            BuildableName = "KnightTime.app"
             BlueprintName = "KnightTime"
             ReferencedContainer = "container:KnightTime.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D53CEF76191175CD00974568"
-            BuildableName = "HomePageExample.app"
+            BuildableName = "KnightTime.app"
             BlueprintName = "KnightTime"
             ReferencedContainer = "container:KnightTime.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D53CEF76191175CD00974568"
-            BuildableName = "HomePageExample.app"
+            BuildableName = "KnightTime.app"
             BlueprintName = "KnightTime"
             ReferencedContainer = "container:KnightTime.xcodeproj">
          </BuildableReference>
