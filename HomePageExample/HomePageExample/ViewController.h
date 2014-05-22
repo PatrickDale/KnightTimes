@@ -12,8 +12,9 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *storyImage;
 @property (strong, nonatomic) IBOutlet UIView *homeViewController;
+@property (strong, nonatomic) IBOutlet UIView *storyView;
+
 - (IBAction)returnToHome:(id)sender;
 - (IBAction)gestureRecognized:(id)sender;
 

@@ -12,13 +12,13 @@
 @interface ViewController () {
     NSMutableArray *storyViewArray;
     XMLParser *xmlParser;
+    UINavigationController *navigationController;
 }
 @end
 
 @implementation ViewController
 
-@synthesize homeViewController;
-@synthesize storyImage;
+@synthesize homeViewController, storyView;
 
 /***
  * Initialize globals, and load the views.
@@ -75,7 +75,6 @@
     //Add scrollable subview with all subviews to homeview
     scrollSubView.contentSize = CGSizeMake([UIScreen mainScreen].applicationFrame.size.width, height+30);
     [homeViewController addSubview:scrollSubView];
-    storyImage.image = [UIImage imageNamed:@"CJ_Dale_Shot_Put.jpg"];
 }
 
 
@@ -118,12 +117,20 @@
  **/
 - (IBAction)gestureRecognized:(id)sender
 {
+    //[self.navigationController popViewControllerAnimated: NO];
+    //[self.tabBarController.navigationController popViewControllerAnimated: YES];
+    Story *story = [[xmlParser stories] objectAtIndex:0];
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"StoryViewController"];
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(vc.view.frame.origin.x, vc.view.frame.origin.y + 40, vc.view.frame.size.width, vc.view.frame.size.height)];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
+    [vc.view addSubview:webView];
+    //[self.view addSubview:storyView];
     [self presentViewController:vc animated:YES completion:nil];
+    //[self.tabBarController.navigationController pushViewController:vc animated:YES];
 }
-
+    
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
