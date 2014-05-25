@@ -21,9 +21,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="jUs-wy-rAb">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="CE5-Lh-mhC">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="CE5-Lh-mhC">
                                             <connections>
-                                                <action selector="returnToHome:" destination="me1-gh-QY0" id="gBN-6A-yYb"/>
+                                                <action selector="returnToHome:" destination="me1-gh-QY0" id="ESK-yh-QYO"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="234" y="-2019"/>
         </scene>
-        <!--Schedule View Controller - Schedule/Results-->
+        <!--Team View Controller - Sports-->
         <scene sceneID="arT-tY-YBa">
             <objects>
-                <viewController id="bGz-fg-pSU" customClass="ScheduleViewController" sceneMemberID="viewController">
+                <viewController id="bGz-fg-pSU" customClass="TeamViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pCT-Ye-OI8"/>
                         <viewControllerLayoutGuide type="bottom" id="DNy-DM-buR"/>
@@ -92,68 +92,11 @@
                     <view key="view" contentMode="scaleToFill" id="1sJ-oy-89L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntC-u1-lh9">
-                                <rect key="frame" x="0.0" y="62" width="320" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fws-2a-lBp">
-                                <rect key="frame" x="0.0" y="127" width="320" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0P-Ys-39j">
-                                <rect key="frame" x="0.0" y="199" width="320" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDG-Rq-GPL">
-                                <rect key="frame" x="0.0" y="259" width="320" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qha-Cg-Z3j">
-                                <rect key="frame" x="0.0" y="319" width="320" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlb-Ep-oYy">
-                                <rect key="frame" x="0.0" y="379" width="320" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HS-lc-ZhG">
-                                <rect key="frame" x="0.0" y="439" width="320" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SCHEDULE AND RESULTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUi-qi-A1w">
-                                <rect key="frame" x="0.0" y="2" width="320" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Schedule/Results" id="P5V-OM-ovY"/>
+                    <tabBarItem key="tabBarItem" title="Sports" id="P5V-OM-ovY"/>
                     <connections>
-                        <outlet property="labelFive" destination="Qha-Cg-Z3j" id="WwA-2Y-VWZ"/>
-                        <outlet property="labelFour" destination="EDG-Rq-GPL" id="e2C-iH-D5P"/>
-                        <outlet property="labelOne" destination="ntC-u1-lh9" id="0jV-8r-ER2"/>
-                        <outlet property="labelSeven" destination="3HS-lc-ZhG" id="ubv-t2-8AT"/>
-                        <outlet property="labelSix" destination="nlb-Ep-oYy" id="yRV-Hk-Z2u"/>
-                        <outlet property="labelThree" destination="x0P-Ys-39j" id="J2Q-Lt-a38"/>
-                        <outlet property="labelTwo" destination="fws-2a-lBp" id="FnX-MV-Sok"/>
-                        <outlet property="scheduleAndResults" destination="AUi-qi-A1w" id="Bay-fM-u3R"/>
+                        <outlet property="TeamView" destination="1sJ-oy-89L" id="hG7-jd-zvp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuE-OS-azP" userLabel="First Responder" sceneMemberID="firstResponder"/>

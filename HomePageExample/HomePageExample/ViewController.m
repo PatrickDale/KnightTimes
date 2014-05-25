@@ -13,6 +13,8 @@
     NSMutableArray *storyViewArray;
     XMLParser *xmlParser;
     UINavigationController *navigationController;
+    UIViewController *tempViewController;
+    BOOL isOpen;
 }
 @end
 
@@ -29,15 +31,16 @@
 {
     [super viewDidLoad];
     xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://apps.carleton.edu/athletics/feeds/blogs/varsity_athletics"];
-    NSLog(@"Story Count: %lu", (unsigned long)[[xmlParser stories] count]);
+
     //Set background collor of homeview
     homeViewController.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
+    
     //Create scrollable subview
     UIScrollView *scrollSubView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].applicationFrame.size.width, [UIScreen mainScreen].applicationFrame.size.height)];
     int count = 1;
     int height = 20;
     //Create six smaller subviews
-    for (int i = 0; i<6; i++) {
+    for (int i = 0; i<[[xmlParser stories] count]/2; i++) {
         // Demensions of left and right boxes
         CGRect  leftBox = CGRectMake(10, height, [self box_width]-5, [self box_height]);
         CGRect  rightBox = CGRectMake(([UIScreen mainScreen].applicationFrame.size.width/2)+5, height, [self box_width]-5, [self box_height]);
@@ -82,22 +85,32 @@
 {
     [super viewDidLayoutSubviews];
     //TEXT IN SUBVIEWS
-    UILabel *yourLabel = [[UILabel alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x)-2, (((UIView*)[self.view viewWithTag:1]).frame.origin.y+((((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))), (((UIView*)[self.view viewWithTag:1]).frame.size.width)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(1.0/3.0))];
-    Story *text = [[xmlParser stories] objectAtIndex:0];
-    [yourLabel setText:text.title];
-    [yourLabel setTextColor:[UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1]];
-    [yourLabel setBackgroundColor:[UIColor clearColor]];
-    [yourLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 14.0f]];
+    for (int i=0; i<[[xmlParser stories] count]; i++) {
+        Story *story = [[xmlParser stories] objectAtIndex:i];
+        //NSLog(@"Count: %@", story.title);
+        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x)-2, (((UIView*)[self.view viewWithTag:1]).frame.origin.y+((((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))), (((UIView*)[self.view viewWithTag:1]).frame.size.width)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(1.0/3.0))];
+        [textLabel setText:story.title];
+        [textLabel setTextColor:[UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1]];
+        [textLabel setBackgroundColor:[UIColor clearColor]];
+        [textLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 14.0f]];
+        textLabel.numberOfLines = 0;
+        [((UIView*)[self.view viewWithTag:i+1]) addSubview:textLabel];
+        //IMAGE IN SUBVIEWS
+        UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
+        imageArea.image = [UIImage imageNamed:@"knightHead.jpg"];
+        [((UIView*)[self.view viewWithTag:i+1]) addSubview:imageArea];
+    }
+    
     //yourLabel.shadowColor = [UIColor blackColor];
     //yourLabel.shadowOffset = CGSizeMake(0, 1.0);
-    yourLabel.numberOfLines = 0;
+    
     //yourLabel.lineBreakMode = NSLineBreakByCharWrapping;
-    [((UIView*)[self.view viewWithTag:1]) addSubview:yourLabel];
+    
     
     //IMAGE IN SUBVIEWS
-    UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
-    imageArea.image = [UIImage imageNamed:@"CJ_Dale_Shot_Put.jpg"];
-    [((UIView*)[self.view viewWithTag:1]) addSubview:imageArea];
+    //UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
+    //imageArea.image = [UIImage imageNamed:@"CJ_Dale_Shot_Put.jpg"];
+    //[((UIView*)[self.view viewWithTag:1]) addSubview:imageArea];
 }
 
 
@@ -107,7 +120,11 @@
  * @Return: IBAction
  **/
 - (IBAction)returnToHome:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    UIView *viewToRemove = [homeViewController viewWithTag:111];
+    [viewToRemove removeFromSuperview];
+    [tempViewController.view removeFromSuperview];
+    isOpen = false;
 }
 
 /***
@@ -119,15 +136,22 @@
 {
     //[self.navigationController popViewControllerAnimated: NO];
     //[self.tabBarController.navigationController popViewControllerAnimated: YES];
-    Story *story = [[xmlParser stories] objectAtIndex:0];
+    //NSLog(@"Tag: %d", [sender tag]);
+    UIView *view = [sender view];
+    Story *story = [[xmlParser stories] objectAtIndex:view.tag-1];
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"StoryViewController"];
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(vc.view.frame.origin.x, vc.view.frame.origin.y + 40, vc.view.frame.size.width, vc.view.frame.size.height)];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
     [vc.view addSubview:webView];
+    vc.view.tag = 111;
+    tempViewController = vc;
+    [homeViewController addSubview:vc.view];
+    isOpen = true;
     //[self.view addSubview:storyView];
-    [self presentViewController:vc animated:YES completion:nil];
+    //[self presentViewController:vc animated:YES completion:nil];
+    //[homeViewController removeFromSuperview];
     //[self.tabBarController.navigationController pushViewController:vc animated:YES];
 }
     
