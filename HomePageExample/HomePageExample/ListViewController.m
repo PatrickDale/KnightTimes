@@ -65,8 +65,6 @@
 }
 
 - (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.view removeFromSuperview];
-    //ListStoryViewController
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     CGPoint hitPoint = [cell convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *hitIndex = [self.tableView indexPathForRowAtPoint:hitPoint];
@@ -80,8 +78,8 @@
     NSLog(@"Link: %@", story.link);
     [viewC.view addSubview:wView];
     tempStoryController = viewC;
-    //[self.view addSubview:viewC.view];
-    [self presentViewController:viewC animated:YES completion:nil];
+    [self.view addSubview:viewC.view];
+    //[self presentViewController:viewC animated:YES completion:nil];
 
     //[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
