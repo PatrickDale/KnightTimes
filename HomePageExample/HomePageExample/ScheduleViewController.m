@@ -14,7 +14,7 @@
 
 @implementation ScheduleViewController
 
-@synthesize labelOne,labelTwo,labelThree,labelFour,labelFive,labelSix,labelSeven;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

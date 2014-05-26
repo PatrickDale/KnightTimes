@@ -13,8 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *storyImage;
 @property (strong, nonatomic) IBOutlet UIView *scheduleViewController;
-- (IBAction)returnHome:(id)sender;
-- (IBAction)gestureRecognized:(id)sender;
+
 
 
 @property NSString *text;
