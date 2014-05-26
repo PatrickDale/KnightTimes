@@ -146,7 +146,7 @@
     [vc.view addSubview:webView];
     vc.view.tag = 111;
     tempViewController = vc;
-    [homeViewController addSubview:vc.view];
+    [self.view addSubview:vc.view];
     //[self.view addSubview:storyView];
     //[self presentViewController:vc animated:YES completion:nil];
     //[homeViewController removeFromSuperview];

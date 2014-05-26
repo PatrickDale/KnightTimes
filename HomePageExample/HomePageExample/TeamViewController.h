@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewController.h"
 
-@interface TeamViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UIView *TeamView;
+@interface TeamViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    UITableView *tableView;
+    NSDictionary *sportsInfo;
+}
+
+- (IBAction)returnToTeamList:(id)sender;
+@property (nonatomic, retain) UITableView *tableView;
+
+
+
 
 @end

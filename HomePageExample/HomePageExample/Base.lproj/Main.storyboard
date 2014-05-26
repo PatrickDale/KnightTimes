@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Y58-0z-S0b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Y58-0z-S0b">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Team View Controller-->
         <scene sceneID="3xJ-k3-NWF">
             <objects>
-                <viewController storyboardIdentifier="StoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="me1-gh-QY0" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="me1-gh-QY0" customClass="TeamViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tBL-50-Z5S"/>
                         <viewControllerLayoutGuide type="bottom" id="v9y-kI-2fK"/>
@@ -23,7 +23,7 @@
                                     <navigationItem id="jUs-wy-rAb">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="CE5-Lh-mhC">
                                             <connections>
-                                                <action selector="returnToHome:" destination="me1-gh-QY0" id="ESK-yh-QYO"/>
+                                                <action selector="returnToTeamList:" destination="me1-gh-QY0" id="aa6-wb-igc"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -32,13 +32,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="storyView" destination="bB8-96-kq2" id="l1k-Iy-t1O"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6h-61-f2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="-2683"/>
+            <point key="canvasLocation" x="691" y="-2689"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="c2o-ru-joV">
@@ -95,9 +92,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sports" id="P5V-OM-ovY"/>
-                    <connections>
-                        <outlet property="TeamView" destination="1sJ-oy-89L" id="hG7-jd-zvp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nuE-OS-azP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +117,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1le-ek-I5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="888" y="-1342"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Id0-cJ-giP">
+            <objects>
+                <viewController storyboardIdentifier="StoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iHq-du-75K" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mkg-zB-dKN"/>
+                        <viewControllerLayoutGuide type="bottom" id="753-5g-bYS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0HO-Pf-hzK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r8I-Q7-TPx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="7KQ-Ct-DpZ">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="ET1-v2-p2O">
+                                            <connections>
+                                                <action selector="returnToHome:" destination="iHq-du-75K" id="l3K-Js-x5f"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="storyView" destination="0HO-Pf-hzK" id="Tll-Mz-XRv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZs-eG-eu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047" y="-2683"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="0Sp-wS-Of3">
+            <objects>
+                <viewController storyboardIdentifier="ListStoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="98y-te-ps2" customClass="ListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Luv-W5-PO9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y3g-v7-0Ob"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zO1-Cm-AJV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="scR-rP-PZl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="hz0-xU-GB9">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="j7M-St-jS2">
+                                            <connections>
+                                                <action selector="returnToTeamStories:" destination="98y-te-ps2" id="Fpa-wv-0ZX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hze-Rd-pZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="-2689"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.03171183845786775" green="0.091022375658371471" blue="0.73397640306122447" alpha="1" colorSpace="calibratedRGB"/>
