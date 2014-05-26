@@ -72,8 +72,6 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
 - (IBAction)gestureRecognized:(id)sender
 {
     NSString * storyboardName = @"Main";

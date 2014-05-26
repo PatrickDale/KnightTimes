@@ -116,6 +116,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="scheduleViewController" destination="ACq-Gs-N77" id="hOM-kS-72b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1le-ek-I5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
