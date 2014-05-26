@@ -10,19 +10,16 @@
 
 @interface ScheduleViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *labelOne;
-@property (weak, nonatomic) IBOutlet UILabel *labelTwo;
-@property (weak, nonatomic) IBOutlet UILabel *labelThree;
-@property (weak, nonatomic) IBOutlet UILabel *labelFour;
-@property (weak, nonatomic) IBOutlet UILabel *labelFive;
-@property (weak, nonatomic) IBOutlet UILabel *labelSix;
-@property (weak, nonatomic) IBOutlet UILabel *labelSeven;
-@property (weak, nonatomic) IBOutlet UILabel *scheduleAndResults;
+
+@property (weak, nonatomic) IBOutlet UIImageView *storyImage;
+@property (strong, nonatomic) IBOutlet UIView *scheduleViewController;
+- (IBAction)returnHome:(id)sender;
+- (IBAction)gestureRecognized:(id)sender;
+
+
 @property NSString *text;
 
 
 @end
-
-
 
 
