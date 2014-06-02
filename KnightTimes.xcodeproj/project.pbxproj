@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D56D7EBC193CB99600F09168 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EB7193CB99600F09168 /* TFHpple.m */; };
+		D56D7EBD193CB99600F09168 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EB9193CB99600F09168 /* TFHppleElement.m */; };
+		D56D7EBE193CB99600F09168 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EBB193CB99600F09168 /* XPathQuery.m */; };
+		D56F05E7193BC9E60091FA3E /* XHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D56F05E6193BC9E60091FA3E /* XHTMLParser.m */; };
+		D56F0606193BE1360091FA3E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D56F0605193BE1360091FA3E /* libxml2.dylib */; };
+		D56F0609193C10DD0091FA3E /* HPPLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D56F0608193C10DD0091FA3E /* HPPLParser.m */; };
+		D56F060C193C3B040091FA3E /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D56F060B193C3B040091FA3E /* TwitterViewController.m */; };
+		D59D411E19342E82000C4487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59D411D19342E82000C4487 /* Foundation.framework */; };
+		D59D412019342E82000C4487 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59D411F19342E82000C4487 /* CoreGraphics.framework */; };
+		D59D412219342E82000C4487 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59D412119342E82000C4487 /* UIKit.framework */; };
+		D59D412819342E82000C4487 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D59D412619342E82000C4487 /* InfoPlist.strings */; };
+		D59D412A19342E82000C4487 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D59D412919342E82000C4487 /* main.m */; };
+		D59D412E19342E82000C4487 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D59D412D19342E82000C4487 /* AppDelegate.m */; };
+		D59D413119342E82000C4487 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59D412F19342E82000C4487 /* Main.storyboard */; };
+		D59D413619342E82000C4487 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D59D413519342E82000C4487 /* Images.xcassets */; };
+		D59D413D19342E82000C4487 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59D413C19342E82000C4487 /* XCTest.framework */; };
+		D59D413E19342E82000C4487 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59D411D19342E82000C4487 /* Foundation.framework */; };
+		D59D413F19342E82000C4487 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59D412119342E82000C4487 /* UIKit.framework */; };
+		D59D414719342E82000C4487 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D59D414519342E82000C4487 /* InfoPlist.strings */; };
+		D59D414919342E82000C4487 /* KnightTimesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D59D414819342E82000C4487 /* KnightTimesTests.m */; };
+		D59D415419343190000C4487 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D59D415319343190000C4487 /* HomeViewController.m */; };
+		D59D415719343FA3000C4487 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D59D415619343FA3000C4487 /* XMLParser.m */; };
+		D59D415A19343FEA000C4487 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = D59D415919343FEA000C4487 /* Story.m */; };
+		D59D415C19344E2A000C4487 /* knightHead.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D59D415B19344E2A000C4487 /* knightHead.jpg */; };
+		D59D415F193453A6000C4487 /* SportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D59D415E193453A6000C4487 /* SportViewController.m */; };
+		D59D4162193455E2000C4487 /* TeamStoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D59D4161193455E2000C4487 /* TeamStoryListViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D59D414019342E82000C4487 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D59D411219342E82000C4487 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D59D411919342E82000C4487;
+			remoteInfo = KnightTimes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D56D7EB6193CB99600F09168 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHpple.h; path = "../../../../../Downloads/hpple-master 3/TFHpple.h"; sourceTree = "<group>"; };
+		D56D7EB7193CB99600F09168 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHpple.m; path = "../../../../../Downloads/hpple-master 3/TFHpple.m"; sourceTree = "<group>"; };
+		D56D7EB8193CB99600F09168 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHppleElement.h; path = "../../../../../Downloads/hpple-master 3/TFHppleElement.h"; sourceTree = "<group>"; };
+		D56D7EB9193CB99600F09168 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHppleElement.m; path = "../../../../../Downloads/hpple-master 3/TFHppleElement.m"; sourceTree = "<group>"; };
+		D56D7EBA193CB99600F09168 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPathQuery.h; path = "../../../../../Downloads/hpple-master 3/XPathQuery.h"; sourceTree = "<group>"; };
+		D56D7EBB193CB99600F09168 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathQuery.m; path = "../../../../../Downloads/hpple-master 3/XPathQuery.m"; sourceTree = "<group>"; };
+		D56F05E5193BC9E60091FA3E /* XHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHTMLParser.h; sourceTree = "<group>"; };
+		D56F05E6193BC9E60091FA3E /* XHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHTMLParser.m; sourceTree = "<group>"; };
+		D56F0605193BE1360091FA3E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		D56F0607193C10DD0091FA3E /* HPPLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPLParser.h; sourceTree = "<group>"; };
+		D56F0608193C10DD0091FA3E /* HPPLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPLParser.m; sourceTree = "<group>"; };
+		D56F060A193C3B040091FA3E /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
+		D56F060B193C3B040091FA3E /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
+		D59D411A19342E82000C4487 /* KnightTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnightTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D59D411D19342E82000C4487 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D59D411F19342E82000C4487 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D59D412119342E82000C4487 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D59D412519342E82000C4487 /* KnightTimes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KnightTimes-Info.plist"; sourceTree = "<group>"; };
+		D59D412719342E82000C4487 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D59D412919342E82000C4487 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D59D412B19342E82000C4487 /* KnightTimes-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KnightTimes-Prefix.pch"; sourceTree = "<group>"; };
+		D59D412C19342E82000C4487 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D59D412D19342E82000C4487 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D59D413019342E82000C4487 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D59D413519342E82000C4487 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D59D413B19342E82000C4487 /* KnightTimesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnightTimesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D59D413C19342E82000C4487 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D59D414419342E82000C4487 /* KnightTimesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KnightTimesTests-Info.plist"; sourceTree = "<group>"; };
+		D59D414619342E82000C4487 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D59D414819342E82000C4487 /* KnightTimesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KnightTimesTests.m; sourceTree = "<group>"; };
+		D59D415219343190000C4487 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D59D415319343190000C4487 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D59D415519343FA3000C4487 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		D59D415619343FA3000C4487 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		D59D415819343FEA000C4487 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Story.h; sourceTree = "<group>"; };
+		D59D415919343FEA000C4487 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Story.m; sourceTree = "<group>"; };
+		D59D415B19344E2A000C4487 /* knightHead.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = knightHead.jpg; sourceTree = "<group>"; };
+		D59D415D193453A6000C4487 /* SportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportViewController.h; sourceTree = "<group>"; };
+		D59D415E193453A6000C4487 /* SportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportViewController.m; sourceTree = "<group>"; };
+		D59D4160193455E2000C4487 /* TeamStoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamStoryListViewController.h; sourceTree = "<group>"; };
+		D59D4161193455E2000C4487 /* TeamStoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamStoryListViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D59D411719342E82000C4487 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56F0606193BE1360091FA3E /* libxml2.dylib in Frameworks */,
+				D59D412019342E82000C4487 /* CoreGraphics.framework in Frameworks */,
+				D59D412219342E82000C4487 /* UIKit.framework in Frameworks */,
+				D59D411E19342E82000C4487 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D59D413819342E82000C4487 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59D413D19342E82000C4487 /* XCTest.framework in Frameworks */,
+				D59D413F19342E82000C4487 /* UIKit.framework in Frameworks */,
+				D59D413E19342E82000C4487 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D56F05E8193BDE290091FA3E /* hppl */ = {
+			isa = PBXGroup;
+			children = (
+				D56D7EB6193CB99600F09168 /* TFHpple.h */,
+				D56D7EB7193CB99600F09168 /* TFHpple.m */,
+				D56D7EB8193CB99600F09168 /* TFHppleElement.h */,
+				D56D7EB9193CB99600F09168 /* TFHppleElement.m */,
+				D56D7EBA193CB99600F09168 /* XPathQuery.h */,
+				D56D7EBB193CB99600F09168 /* XPathQuery.m */,
+			);
+			name = hppl;
+			sourceTree = "<group>";
+		};
+		D59D411119342E82000C4487 = {
+			isa = PBXGroup;
+			children = (
+				D59D412319342E82000C4487 /* KnightTimes */,
+				D59D414219342E82000C4487 /* KnightTimesTests */,
+				D59D411C19342E82000C4487 /* Frameworks */,
+				D59D411B19342E82000C4487 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D59D411B19342E82000C4487 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D59D411A19342E82000C4487 /* KnightTimes.app */,
+				D59D413B19342E82000C4487 /* KnightTimesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D59D411C19342E82000C4487 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D56F0605193BE1360091FA3E /* libxml2.dylib */,
+				D59D411D19342E82000C4487 /* Foundation.framework */,
+				D59D411F19342E82000C4487 /* CoreGraphics.framework */,
+				D59D412119342E82000C4487 /* UIKit.framework */,
+				D59D413C19342E82000C4487 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D59D412319342E82000C4487 /* KnightTimes */ = {
+			isa = PBXGroup;
+			children = (
+				D56F05E8193BDE290091FA3E /* hppl */,
+				D59D415B19344E2A000C4487 /* knightHead.jpg */,
+				D59D412C19342E82000C4487 /* AppDelegate.h */,
+				D59D412D19342E82000C4487 /* AppDelegate.m */,
+				D59D412F19342E82000C4487 /* Main.storyboard */,
+				D59D413519342E82000C4487 /* Images.xcassets */,
+				D59D412419342E82000C4487 /* Supporting Files */,
+				D59D415219343190000C4487 /* HomeViewController.h */,
+				D59D415319343190000C4487 /* HomeViewController.m */,
+				D59D415519343FA3000C4487 /* XMLParser.h */,
+				D59D415619343FA3000C4487 /* XMLParser.m */,
+				D59D415819343FEA000C4487 /* Story.h */,
+				D59D415919343FEA000C4487 /* Story.m */,
+				D59D415D193453A6000C4487 /* SportViewController.h */,
+				D59D415E193453A6000C4487 /* SportViewController.m */,
+				D59D4160193455E2000C4487 /* TeamStoryListViewController.h */,
+				D59D4161193455E2000C4487 /* TeamStoryListViewController.m */,
+				D56F05E5193BC9E60091FA3E /* XHTMLParser.h */,
+				D56F05E6193BC9E60091FA3E /* XHTMLParser.m */,
+				D56F0607193C10DD0091FA3E /* HPPLParser.h */,
+				D56F0608193C10DD0091FA3E /* HPPLParser.m */,
+				D56F060A193C3B040091FA3E /* TwitterViewController.h */,
+				D56F060B193C3B040091FA3E /* TwitterViewController.m */,
+			);
+			path = KnightTimes;
+			sourceTree = "<group>";
+		};
+		D59D412419342E82000C4487 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D59D412519342E82000C4487 /* KnightTimes-Info.plist */,
+				D59D412619342E82000C4487 /* InfoPlist.strings */,
+				D59D412919342E82000C4487 /* main.m */,
+				D59D412B19342E82000C4487 /* KnightTimes-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D59D414219342E82000C4487 /* KnightTimesTests */ = {
+			isa = PBXGroup;
+			children = (
+				D59D414819342E82000C4487 /* KnightTimesTests.m */,
+				D59D414319342E82000C4487 /* Supporting Files */,
+			);
+			path = KnightTimesTests;
+			sourceTree = "<group>";
+		};
+		D59D414319342E82000C4487 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D59D414419342E82000C4487 /* KnightTimesTests-Info.plist */,
+				D59D414519342E82000C4487 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D59D411919342E82000C4487 /* KnightTimes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D59D414C19342E82000C4487 /* Build configuration list for PBXNativeTarget "KnightTimes" */;
+			buildPhases = (
+				D59D411619342E82000C4487 /* Sources */,
+				D59D411719342E82000C4487 /* Frameworks */,
+				D59D411819342E82000C4487 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KnightTimes;
+			productName = KnightTimes;
+			productReference = D59D411A19342E82000C4487 /* KnightTimes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D59D413A19342E82000C4487 /* KnightTimesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D59D414F19342E82000C4487 /* Build configuration list for PBXNativeTarget "KnightTimesTests" */;
+			buildPhases = (
+				D59D413719342E82000C4487 /* Sources */,
+				D59D413819342E82000C4487 /* Frameworks */,
+				D59D413919342E82000C4487 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D59D414119342E82000C4487 /* PBXTargetDependency */,
+			);
+			name = KnightTimesTests;
+			productName = KnightTimesTests;
+			productReference = D59D413B19342E82000C4487 /* KnightTimesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D59D411219342E82000C4487 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = 4students2apps;
+				TargetAttributes = {
+					D59D413A19342E82000C4487 = {
+						TestTargetID = D59D411919342E82000C4487;
+					};
+				};
+			};
+			buildConfigurationList = D59D411519342E82000C4487 /* Build configuration list for PBXProject "KnightTimes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D59D411119342E82000C4487;
+			productRefGroup = D59D411B19342E82000C4487 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D59D411919342E82000C4487 /* KnightTimes */,
+				D59D413A19342E82000C4487 /* KnightTimesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D59D411819342E82000C4487 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59D415C19344E2A000C4487 /* knightHead.jpg in Resources */,
+				D59D413619342E82000C4487 /* Images.xcassets in Resources */,
+				D59D412819342E82000C4487 /* InfoPlist.strings in Resources */,
+				D59D413119342E82000C4487 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D59D413919342E82000C4487 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59D414719342E82000C4487 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D59D411619342E82000C4487 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D56D7EBD193CB99600F09168 /* TFHppleElement.m in Sources */,
+				D59D415719343FA3000C4487 /* XMLParser.m in Sources */,
+				D56F05E7193BC9E60091FA3E /* XHTMLParser.m in Sources */,
+				D59D415F193453A6000C4487 /* SportViewController.m in Sources */,
+				D59D412E19342E82000C4487 /* AppDelegate.m in Sources */,
+				D59D412A19342E82000C4487 /* main.m in Sources */,
+				D56F060C193C3B040091FA3E /* TwitterViewController.m in Sources */,
+				D59D4162193455E2000C4487 /* TeamStoryListViewController.m in Sources */,
+				D56D7EBE193CB99600F09168 /* XPathQuery.m in Sources */,
+				D59D415A19343FEA000C4487 /* Story.m in Sources */,
+				D59D415419343190000C4487 /* HomeViewController.m in Sources */,
+				D56D7EBC193CB99600F09168 /* TFHpple.m in Sources */,
+				D56F0609193C10DD0091FA3E /* HPPLParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D59D413719342E82000C4487 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59D414919342E82000C4487 /* KnightTimesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D59D414119342E82000C4487 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D59D411919342E82000C4487 /* KnightTimes */;
+			targetProxy = D59D414019342E82000C4487 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D59D412619342E82000C4487 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D59D412719342E82000C4487 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D59D412F19342E82000C4487 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D59D413019342E82000C4487 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D59D414519342E82000C4487 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D59D414619342E82000C4487 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D59D414A19342E82000C4487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D59D414B19342E82000C4487 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D59D414D19342E82000C4487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KnightTimes/KnightTimes-Prefix.pch";
+				INFOPLIST_FILE = "KnightTimes/KnightTimes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D59D414E19342E82000C4487 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KnightTimes/KnightTimes-Prefix.pch";
+				INFOPLIST_FILE = "KnightTimes/KnightTimes-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D59D415019342E82000C4487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KnightTimes.app/KnightTimes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KnightTimes/KnightTimes-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "KnightTimesTests/KnightTimesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D59D415119342E82000C4487 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KnightTimes.app/KnightTimes";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KnightTimes/KnightTimes-Prefix.pch";
+				INFOPLIST_FILE = "KnightTimesTests/KnightTimesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D59D411519342E82000C4487 /* Build configuration list for PBXProject "KnightTimes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D59D414A19342E82000C4487 /* Debug */,
+				D59D414B19342E82000C4487 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D59D414C19342E82000C4487 /* Build configuration list for PBXNativeTarget "KnightTimes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D59D414D19342E82000C4487 /* Debug */,
+				D59D414E19342E82000C4487 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D59D414F19342E82000C4487 /* Build configuration list for PBXNativeTarget "KnightTimesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D59D415019342E82000C4487 /* Debug */,
+				D59D415119342E82000C4487 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D59D411219342E82000C4487 /* Project object */;
+}

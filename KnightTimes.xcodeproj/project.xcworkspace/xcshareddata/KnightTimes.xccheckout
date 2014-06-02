@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BEBFE256-E6D8-41D1-9602-FD45F568D0F1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>KnightTimes</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>263AF480-1634-4A0B-9834-7C26AD3E4AD6</key>
+		<string>ssh://bitbucket.org/4students2apps/carletonsportsios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>KnightTimes.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>263AF480-1634-4A0B-9834-7C26AD3E4AD6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://bitbucket.org/4students2apps/carletonsportsios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>263AF480-1634-4A0B-9834-7C26AD3E4AD6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>263AF480-1634-4A0B-9834-7C26AD3E4AD6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>carletonsportsios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
