@@ -8,17 +8,15 @@
 
 #import "HomeViewController.h"
 #import "XMLParser.h"
-#import "XHTMLParser.h"
 #import "HPPLParser.h"
-#import "HPPLXMLParser.h"
 
 @interface HomeViewController () {
     NSMutableArray *storyViewArray;
     XMLParser *xmlParser;
-    XMLParser *savedParser;
-    XHTMLParser *xhtmlParser;
     HPPLParser *hpplParser;
     UIViewController *storyViewController;
+    NSMutableDictionary *imageDictionary;
+    NSDictionary *loadedImageDict;
 }
 @end
 
@@ -37,8 +35,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadImageData];
     xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://apps.carleton.edu/athletics/feeds/blogs/varsity_athletics"];
-    HPPLXMLParser *hpplTestParser = [[HPPLXMLParser alloc] parseXMLByURL:@"http://apps.carleton.edu/athletics/feeds/blogs/varsity_athletics"];
     //Set background collor of homeview
     homeView.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     UIScrollView *scrollSubView = [[UIScrollView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y+55, homeView.frame.size.width, homeView.frame.size.height)];
@@ -87,7 +85,7 @@
     scrollSubView.contentSize = CGSizeMake(homeView.frame.size.width, height+105);
     self.navigationItem.title = @"Front Page";
     [homeView addSubview:scrollSubView];
-    
+    imageDictionary = [NSMutableDictionary dictionary];
     
     //homeView.backgroundColor = [UIColor greenColor];
     //UIViewController *viewController = [[UIViewController alloc] init];
@@ -111,14 +109,20 @@
         [((UIView*)[self.view viewWithTag:i+1]) addSubview:textLabel];
         //IMAGE IN SUBVIEWS
         UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
-        hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
-        NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
-        //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
-        NSData *data = [NSData dataWithContentsOfURL:imgURL];
+        NSData *data;
+        if ([loadedImageDict valueForKey:story.link]) {
+            data = [loadedImageDict valueForKey:story.link];
+        } else {
+            hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
+            NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
+            //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
+            data = [NSData dataWithContentsOfURL:imgURL];
+        }
         UIImage *img = [[UIImage alloc] initWithData:data];
         //imageArea.image = [UIImage imageNamed:@"knightHead.jpg"];
         imageArea.image = img;
         [((UIView*)[self.view viewWithTag:i+1]) addSubview:imageArea];
+        [imageDictionary setValue:data forKey:story.link];
     }
     
     //yourLabel.shadowColor = [UIColor blackColor];
@@ -131,6 +135,7 @@
     //UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
     //imageArea.image = [UIImage imageNamed:@"CJ_Dale_Shot_Put.jpg"];
     //[((UIView*)[self.view viewWithTag:1]) addSubview:imageArea];
+    [self saveImageData];
 }
 
 /***
@@ -144,11 +149,25 @@
     Story *story = [[xmlParser stories] objectAtIndex:view.tag-1];
     storyViewController = [[UIViewController alloc] init];
     UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y, homeView.frame.size.width, homeView.frame.size.height)];
-    xhtmlParser = [[XHTMLParser alloc] loadXMLByURL:story.link];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
     [storyViewController.view addSubview:webView];
     [self.navigationController pushViewController:storyViewController animated:YES];
+}
 
+- (void)saveImageData
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString  *dictPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"imageDict.out"];
+    [imageDictionary writeToFile:dictPath atomically:YES];
+}
+
+- (void)loadImageData
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString  *dictPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"imageDict.out"];
+    loadedImageDict = [NSDictionary dictionaryWithContentsOfFile:dictPath];
+    //for (NSString *key in dictFromFile)
+        //NSLog(@"---===----- %@ ---===-----", key);
 }
 
 - (void)didReceiveMemoryWarning
