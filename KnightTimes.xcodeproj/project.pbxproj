@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D56D7EBC193CB99600F09168 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EB7193CB99600F09168 /* TFHpple.m */; };
-		D56D7EBD193CB99600F09168 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EB9193CB99600F09168 /* TFHppleElement.m */; };
-		D56D7EBE193CB99600F09168 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EBB193CB99600F09168 /* XPathQuery.m */; };
+		D56D7EC1193D2D2300F09168 /* HPPLXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EC0193D2D2300F09168 /* HPPLXMLParser.m */; };
+		D56D7EC8193D5EEA00F09168 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EC3193D5EEA00F09168 /* TFHpple.m */; };
+		D56D7EC9193D5EEA00F09168 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EC5193D5EEA00F09168 /* TFHppleElement.m */; };
+		D56D7ECA193D5EEA00F09168 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EC7193D5EEA00F09168 /* XPathQuery.m */; };
 		D56F05E7193BC9E60091FA3E /* XHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D56F05E6193BC9E60091FA3E /* XHTMLParser.m */; };
 		D56F0606193BE1360091FA3E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D56F0605193BE1360091FA3E /* libxml2.dylib */; };
 		D56F0609193C10DD0091FA3E /* HPPLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D56F0608193C10DD0091FA3E /* HPPLParser.m */; };
@@ -46,12 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D56D7EB6193CB99600F09168 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHpple.h; path = "../../../../../Downloads/hpple-master 3/TFHpple.h"; sourceTree = "<group>"; };
-		D56D7EB7193CB99600F09168 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHpple.m; path = "../../../../../Downloads/hpple-master 3/TFHpple.m"; sourceTree = "<group>"; };
-		D56D7EB8193CB99600F09168 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHppleElement.h; path = "../../../../../Downloads/hpple-master 3/TFHppleElement.h"; sourceTree = "<group>"; };
-		D56D7EB9193CB99600F09168 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHppleElement.m; path = "../../../../../Downloads/hpple-master 3/TFHppleElement.m"; sourceTree = "<group>"; };
-		D56D7EBA193CB99600F09168 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPathQuery.h; path = "../../../../../Downloads/hpple-master 3/XPathQuery.h"; sourceTree = "<group>"; };
-		D56D7EBB193CB99600F09168 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathQuery.m; path = "../../../../../Downloads/hpple-master 3/XPathQuery.m"; sourceTree = "<group>"; };
+		D56D7EBF193D2D2300F09168 /* HPPLXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPLXMLParser.h; sourceTree = "<group>"; };
+		D56D7EC0193D2D2300F09168 /* HPPLXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPLXMLParser.m; sourceTree = "<group>"; };
+		D56D7EC2193D5EEA00F09168 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		D56D7EC3193D5EEA00F09168 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		D56D7EC4193D5EEA00F09168 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		D56D7EC5193D5EEA00F09168 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		D56D7EC6193D5EEA00F09168 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		D56D7EC7193D5EEA00F09168 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		D56F05E5193BC9E60091FA3E /* XHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHTMLParser.h; sourceTree = "<group>"; };
 		D56F05E6193BC9E60091FA3E /* XHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHTMLParser.m; sourceTree = "<group>"; };
 		D56F0605193BE1360091FA3E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -117,12 +120,12 @@
 		D56F05E8193BDE290091FA3E /* hppl */ = {
 			isa = PBXGroup;
 			children = (
-				D56D7EB6193CB99600F09168 /* TFHpple.h */,
-				D56D7EB7193CB99600F09168 /* TFHpple.m */,
-				D56D7EB8193CB99600F09168 /* TFHppleElement.h */,
-				D56D7EB9193CB99600F09168 /* TFHppleElement.m */,
-				D56D7EBA193CB99600F09168 /* XPathQuery.h */,
-				D56D7EBB193CB99600F09168 /* XPathQuery.m */,
+				D56D7EC2193D5EEA00F09168 /* TFHpple.h */,
+				D56D7EC3193D5EEA00F09168 /* TFHpple.m */,
+				D56D7EC4193D5EEA00F09168 /* TFHppleElement.h */,
+				D56D7EC5193D5EEA00F09168 /* TFHppleElement.m */,
+				D56D7EC6193D5EEA00F09168 /* XPathQuery.h */,
+				D56D7EC7193D5EEA00F09168 /* XPathQuery.m */,
 			);
 			name = hppl;
 			sourceTree = "<group>";
@@ -184,6 +187,8 @@
 				D56F0608193C10DD0091FA3E /* HPPLParser.m */,
 				D56F060A193C3B040091FA3E /* TwitterViewController.h */,
 				D56F060B193C3B040091FA3E /* TwitterViewController.m */,
+				D56D7EBF193D2D2300F09168 /* HPPLXMLParser.h */,
+				D56D7EC0193D2D2300F09168 /* HPPLXMLParser.m */,
 			);
 			path = KnightTimes;
 			sourceTree = "<group>";
@@ -315,18 +320,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D56D7EBD193CB99600F09168 /* TFHppleElement.m in Sources */,
 				D59D415719343FA3000C4487 /* XMLParser.m in Sources */,
 				D56F05E7193BC9E60091FA3E /* XHTMLParser.m in Sources */,
 				D59D415F193453A6000C4487 /* SportViewController.m in Sources */,
+				D56D7EC9193D5EEA00F09168 /* TFHppleElement.m in Sources */,
 				D59D412E19342E82000C4487 /* AppDelegate.m in Sources */,
 				D59D412A19342E82000C4487 /* main.m in Sources */,
 				D56F060C193C3B040091FA3E /* TwitterViewController.m in Sources */,
 				D59D4162193455E2000C4487 /* TeamStoryListViewController.m in Sources */,
-				D56D7EBE193CB99600F09168 /* XPathQuery.m in Sources */,
+				D56D7ECA193D5EEA00F09168 /* XPathQuery.m in Sources */,
+				D56D7EC8193D5EEA00F09168 /* TFHpple.m in Sources */,
+				D56D7EC1193D2D2300F09168 /* HPPLXMLParser.m in Sources */,
 				D59D415A19343FEA000C4487 /* Story.m in Sources */,
 				D59D415419343190000C4487 /* HomeViewController.m in Sources */,
-				D56D7EBC193CB99600F09168 /* TFHpple.m in Sources */,
 				D56F0609193C10DD0091FA3E /* HPPLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

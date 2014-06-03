@@ -10,6 +10,7 @@
 #import "XMLParser.h"
 #import "XHTMLParser.h"
 #import "HPPLParser.h"
+#import "HPPLXMLParser.h"
 
 @interface HomeViewController () {
     NSMutableArray *storyViewArray;
@@ -37,6 +38,7 @@
 {
     [super viewDidLoad];
     xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://apps.carleton.edu/athletics/feeds/blogs/varsity_athletics"];
+    HPPLXMLParser *hpplTestParser = [[HPPLXMLParser alloc] parseXMLByURL:@"http://apps.carleton.edu/athletics/feeds/blogs/varsity_athletics"];
     //Set background collor of homeview
     homeView.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     UIScrollView *scrollSubView = [[UIScrollView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y+55, homeView.frame.size.width, homeView.frame.size.height)];
