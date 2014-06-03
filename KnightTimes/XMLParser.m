@@ -53,6 +53,19 @@
 
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    /*if ([elementName isEqualToString:@"title"]) {
+     NSScanner *scanner = [NSScanner scannerWithString:currentString];
+     if ([scanner scanString:@"'" intoString:NULL]){
+     NSString *location = nil;
+     NSLog(@"I've entered the default case");
+     if ([scanner scanCharactersFromSet: [NSCharacterSet illegalCharacterSet] intoString:&location]){
+     story.title = currentString;
+     }
+     
+     }
+     else{
+     story.title = currentString;
+     } */
     if ([elementName isEqualToString:@"title"]) {
         story.title = currentString;
     }
