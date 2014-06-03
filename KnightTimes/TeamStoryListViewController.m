@@ -16,6 +16,8 @@
     HPPLParser *hpplParser;
     UIViewController *tempStoryController;
     UINavigationController *navController;
+    NSMutableDictionary *imageDictionary;
+    NSDictionary *loadedImageDict;
 }
 
 @end
@@ -38,14 +40,19 @@
     // Do any additional setup after loading the view.
 }
 
--(id) loadTableWithURL:(NSString *)urlString
+-(id) loadTableWithURL:(NSString *)urlString withSport:(NSString *)sport
 {
+    [self loadImageData:sport];
     xmlParser = [[XMLParser alloc] loadXMLByURL:urlString];
+    imageDictionary = [NSMutableDictionary dictionary];
     [self getStoryImages];
     tableView = [[UITableView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height)];
+    self.navigationItem.title = sport;
+    tableView.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     tableView.delegate = self;
     tableView.dataSource = self;
     self.view = tableView;
+    [self saveImageData:sport];
     return self;
 }
 
@@ -53,15 +60,22 @@
 {
     for (int i=0; i<[[xmlParser stories] count]; i++) {
         Story *story = [[xmlParser stories] objectAtIndex:i];
-        hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
-        NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
-        //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
-        NSData *data = [NSData dataWithContentsOfURL:imgURL];
+        NSData *data;
+        if ([loadedImageDict valueForKey:story.link])
+        {
+            data = [loadedImageDict valueForKey:story.link];
+        } else {
+            hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
+            NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
+            //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
+            data = [NSData dataWithContentsOfURL:imgURL];
+        }
         CGRect rect = CGRectMake(0,0,70,70);
         UIGraphicsBeginImageContext( rect.size );
         [[[UIImage alloc] initWithData:data] drawInRect:rect];
         story.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+        [imageDictionary setValue:data forKey:story.link];
     }
 }
 
@@ -81,6 +95,8 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.textLabel.textColor = [UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1];
+        cell.backgroundColor =[UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     }
     Story *sport = [[xmlParser stories] objectAtIndex:indexPath.row];
     //NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
@@ -97,6 +113,7 @@
     cell.imageView.backgroundColor = [UIColor clearColor];
     cell.imageView.layer.cornerRadius = 5.0;
     cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
     cell.textLabel.text = sport.title;
     cell.tag = indexPath.row;
     
@@ -113,6 +130,22 @@
     [tempStoryController.view addSubview:webView];
     NSLog(@"link: %@", story.link);
     [self.navigationController pushViewController:tempStoryController animated:YES];
+}
+
+- (void)saveImageData: (NSString *)sport
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString  *dictPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:sport];
+    [imageDictionary writeToFile:dictPath atomically:YES];
+}
+
+- (void)loadImageData: (NSString *)sport
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString  *dictPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:sport];
+    loadedImageDict = [NSDictionary dictionaryWithContentsOfFile:dictPath];
+    //for (NSString *key in dictFromFile)
+    //NSLog(@"---===----- %@ ---===-----", key);
 }
 
 - (void)didReceiveMemoryWarning

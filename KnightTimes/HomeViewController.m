@@ -110,7 +110,8 @@
         //IMAGE IN SUBVIEWS
         UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
         NSData *data;
-        if ([loadedImageDict valueForKey:story.link]) {
+        if ([loadedImageDict valueForKey:story.link])
+        {
             data = [loadedImageDict valueForKey:story.link];
         } else {
             hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
