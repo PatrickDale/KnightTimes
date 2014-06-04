@@ -58,11 +58,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self createData];
-    tableView = [[UITableView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+70, self.view.frame.size.width, self.view.frame.size.height-120)];
+    tableView = [[UITableView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y+65, self.view.frame.size.width, self.view.frame.size.height-115)];
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
+    sportView.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     [sportView addSubview:tableView];
-    self.navigationItem.title = @"Sports Page";
+    self.navigationItem.title = @"Sports";
 
 }
 
@@ -83,6 +85,9 @@
     if (cell == nil) {
         //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.textLabel.textColor = [UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1];
+        cell.backgroundColor =[UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     //NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
    // NSArray *sortedArray = [[sportsInfo allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
@@ -106,7 +111,7 @@
     //NSLog(@"Index: %@", cell.textLabel.text);
     [self->tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [self->tableView cellForRowAtIndexPath:indexPath];
-    newTable = [[TeamStoryListViewController alloc]loadTableWithURL:[sportsInfo objectForKey:cell.textLabel.text]];
+    newTable = [[TeamStoryListViewController alloc]loadTableWithURL:[sportsInfo objectForKey:cell.textLabel.text] withSport:cell.textLabel.text];
 //    UITableView *view = newTable.tableView;
 //    tempStoryList = [[UIViewController alloc]init];
 //    [tempStoryList.view addSubview:view];

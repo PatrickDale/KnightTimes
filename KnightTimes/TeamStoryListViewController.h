@@ -15,6 +15,6 @@
 }
 
 @property (nonatomic, retain) UITableView *tableView;
--(id) loadTableWithURL:(NSString *) urlString;
+-(id) loadTableWithURL:(NSString *) urlString withSport:(NSString *)sport;
 
 @end

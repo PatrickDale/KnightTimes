@@ -14,5 +14,6 @@
 @property (strong, nonatomic)NSString *link;
 @property (strong, nonatomic)NSString *pubDate;
 @property (strong, nonatomic)UIImage *image;
+@property (strong, nonatomic)NSString *articleText;
 
 @end
