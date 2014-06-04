@@ -87,6 +87,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.textLabel.textColor = [UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1];
         cell.backgroundColor =[UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     //NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
    // NSArray *sortedArray = [[sportsInfo allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
