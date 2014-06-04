@@ -99,9 +99,22 @@
     //TEXT IN SUBVIEWS
     for (int i=0; i<[[xmlParser stories] count]; i++) {
         Story *story = [[xmlParser stories] objectAtIndex:i];
-        HPPLParser *hpplStoryParser = [[HPPLParser alloc] parseHTMLByURL:story.link];
-        story.title = [[hpplStoryParser articleTitle] objectAtIndex:0];
-        story.articleText = [[hpplStoryParser articleText] objectAtIndex:0];
+        //Get all necessary data
+        NSData *data;
+        if ([loadedImageDict valueForKey:story.link])
+        {
+            data = [[loadedImageDict valueForKey:story.link] objectAtIndex:0];
+            story.title = [[loadedImageDict valueForKey:story.link] objectAtIndex:1];
+            story.articleText = [[loadedImageDict valueForKey:story.link] objectAtIndex:2];
+        } else {
+            hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
+            NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
+            //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
+            data = [NSData dataWithContentsOfURL:imgURL];
+            HPPLParser *hpplStoryParser = [[HPPLParser alloc] parseHTMLByURL:story.link];
+            story.title = [[hpplStoryParser articleTitle] objectAtIndex:0];
+            story.articleText = [[hpplStoryParser articleText] objectAtIndex:0];
+        }
         //NSLog(@"Count: %@", story.title);
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x)-2, (((UIView*)[self.view viewWithTag:1]).frame.origin.y+((((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))), (((UIView*)[self.view viewWithTag:1]).frame.size.width)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(1.0/3.0))];
         [textLabel setText:story.title];
@@ -112,21 +125,13 @@
         [((UIView*)[self.view viewWithTag:i+1]) addSubview:textLabel];
         //IMAGE IN SUBVIEWS
         UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
-        NSData *data;
-        if ([loadedImageDict valueForKey:story.link])
-        {
-            data = [loadedImageDict valueForKey:story.link];
-        } else {
-            hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
-            NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
-            //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
-            data = [NSData dataWithContentsOfURL:imgURL];
-        }
         UIImage *img = [[UIImage alloc] initWithData:data];
+        story.image = img;
         //imageArea.image = [UIImage imageNamed:@"knightHead.jpg"];
         imageArea.image = img;
         [((UIView*)[self.view viewWithTag:i+1]) addSubview:imageArea];
-        [imageDictionary setValue:data forKey:story.link];
+        NSArray *dataArray = [[NSArray alloc] initWithObjects:data, story.title, story.articleText, nil];
+        [imageDictionary setValue:dataArray forKey:story.link];
     }
     
     //yourLabel.shadowColor = [UIColor blackColor];
@@ -152,9 +157,31 @@
     UIView *view = [sender view];
     Story *story = [[xmlParser stories] objectAtIndex:view.tag-1];
     storyViewController = [[UIViewController alloc] init];
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y, homeView.frame.size.width, homeView.frame.size.height)];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
-    [storyViewController.view addSubview:webView];
+    storyViewController.view.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
+    //UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y, homeView.frame.size.width, homeView.frame.size.height)];
+    //[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
+    hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
+    //NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
+    //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
+    //NSData *data = [NSData dataWithContentsOfURL:imgURL];
+    //UIImage *img = [[UIImage alloc] initWithData:data];
+    UIImageView *imageArea = [[UIImageView alloc] initWithFrame: CGRectMake(homeView.frame.origin.x+10, homeView.frame.origin.y+75, homeView.frame.size.width-20, homeView.frame.size.height/3.5)];
+    imageArea.image = story.image;
+    UITextView *title = [[UITextView alloc] initWithFrame:CGRectMake(imageArea.frame.origin.x, imageArea.frame.origin.y + imageArea.frame.size.height, imageArea.frame.size.width, 55)];
+    [title setEditable:NO];
+    [title setText:story.title];
+    [title setTextColor:[UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1]];
+    [title setBackgroundColor:[UIColor clearColor]];
+    [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
+    UITextView *articleText = [[UITextView alloc] initWithFrame:CGRectMake(imageArea.frame.origin.x, title.frame.origin.y + title.frame.size.height, imageArea.frame.size.width, homeView.frame.size.height-title.frame.origin.y - 110)];
+    [articleText setEditable:NO];
+    [articleText setText:story.articleText];
+    [articleText setTextColor:[UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1]];
+    [articleText setBackgroundColor:[UIColor clearColor]];
+    [articleText setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
+    [storyViewController.view addSubview:imageArea];
+    [storyViewController.view addSubview:title];
+    [storyViewController.view addSubview:articleText];
     [self.navigationController pushViewController:storyViewController animated:YES];
 }
 

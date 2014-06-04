@@ -60,25 +60,28 @@
 {
     for (int i=0; i<[[xmlParser stories] count]; i++) {
         Story *story = [[xmlParser stories] objectAtIndex:i];
-        HPPLParser *hpplStoryParser = [[HPPLParser alloc] parseHTMLByURL:story.link];
-        story.title = [[hpplStoryParser articleTitle] objectAtIndex:0];
-        story.articleText = [[hpplStoryParser articleText] objectAtIndex:0];
         NSData *data;
         if ([loadedImageDict valueForKey:story.link])
         {
-            data = [loadedImageDict valueForKey:story.link];
+            data = [[loadedImageDict valueForKey:story.link] objectAtIndex:0];
+            story.title = [[loadedImageDict valueForKey:story.link] objectAtIndex:1];
+            story.articleText = [[loadedImageDict valueForKey:story.link] objectAtIndex:2];
         } else {
             hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
             NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
             //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
             data = [NSData dataWithContentsOfURL:imgURL];
+            HPPLParser *hpplStoryParser = [[HPPLParser alloc] parseHTMLByURL:story.link];
+            story.title = [[hpplStoryParser articleTitle] objectAtIndex:0];
+            story.articleText = [[hpplStoryParser articleText] objectAtIndex:0];
         }
         CGRect rect = CGRectMake(0,0,70,70);
         UIGraphicsBeginImageContext( rect.size );
         [[[UIImage alloc] initWithData:data] drawInRect:rect];
         story.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-        [imageDictionary setValue:data forKey:story.link];
+        NSArray *dataArray = [[NSArray alloc] initWithObjects:data, story.title, story.articleText, nil];
+        [imageDictionary setValue:dataArray forKey:story.link];
     }
 }
 
@@ -112,6 +115,8 @@
     //cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     //cell.imageView.frame = CGRectMake(0.0f, 0.0f, 5.0f, 5.0f);
     //cell.imageView.image = img.image;
+    [cell.detailTextLabel setText:sport.pubDate];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.imageView.image = sport.image;
     cell.imageView.backgroundColor = [UIColor clearColor];
     cell.imageView.layer.cornerRadius = 5.0;

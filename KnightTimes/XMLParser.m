@@ -53,11 +53,11 @@
 
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    if ([elementName isEqualToString:@"title"]) {
-        story.title = currentString;
-    }
     if ([elementName isEqualToString:@"pubDate"]) {
-        story.pubDate = currentString;
+        NSRange wordRange = NSMakeRange(0, 4);
+        NSArray *firstWords = [[currentString componentsSeparatedByString:@" "] subarrayWithRange:wordRange];
+        NSString *result = [firstWords componentsJoinedByString:@" "];
+        story.pubDate = result;
     }
     if ([elementName isEqualToString:@"link"]) {
         story.link = currentString;
