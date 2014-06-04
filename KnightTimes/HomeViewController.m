@@ -99,6 +99,9 @@
     //TEXT IN SUBVIEWS
     for (int i=0; i<[[xmlParser stories] count]; i++) {
         Story *story = [[xmlParser stories] objectAtIndex:i];
+        HPPLParser *hpplStoryParser = [[HPPLParser alloc] parseHTMLByURL:story.link];
+        story.title = [[hpplStoryParser articleTitle] objectAtIndex:0];
+        story.articleText = [[hpplStoryParser articleText] objectAtIndex:0];
         //NSLog(@"Count: %@", story.title);
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x)-2, (((UIView*)[self.view viewWithTag:1]).frame.origin.y+((((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))), (((UIView*)[self.view viewWithTag:1]).frame.size.width)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(1.0/3.0))];
         [textLabel setText:story.title];

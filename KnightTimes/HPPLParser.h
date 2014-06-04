@@ -11,6 +11,9 @@
 @interface HPPLParser : NSObject
 
 @property (strong, readonly) NSMutableArray *images;
+@property (strong, readonly) NSMutableArray *articleText;
+@property (strong, readonly) NSMutableArray *articleTitle;
 -(id) parseXMLByURL:(NSString *) urlString;
+-(id) parseHTMLByURL:(NSString *) urlString;
 
 @end

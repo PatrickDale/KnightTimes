@@ -18,5 +18,6 @@
 @synthesize link;
 @synthesize pubDate;
 @synthesize image;
+@synthesize articleText;
 
 @end

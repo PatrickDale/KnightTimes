@@ -60,6 +60,9 @@
 {
     for (int i=0; i<[[xmlParser stories] count]; i++) {
         Story *story = [[xmlParser stories] objectAtIndex:i];
+        HPPLParser *hpplStoryParser = [[HPPLParser alloc] parseHTMLByURL:story.link];
+        story.title = [[hpplStoryParser articleTitle] objectAtIndex:0];
+        story.articleText = [[hpplStoryParser articleText] objectAtIndex:0];
         NSData *data;
         if ([loadedImageDict valueForKey:story.link])
         {
@@ -125,10 +128,35 @@
     [self->tableView deselectRowAtIndexPath:indexPath animated:YES];
     Story *story = [[xmlParser stories] objectAtIndex:indexPath.item];
     tempStoryController = [[UIViewController alloc] init];
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y-65, self.view.frame.size.width, self.view.frame.size.height+115)];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
-    [tempStoryController.view addSubview:webView];
-    NSLog(@"link: %@", story.link);
+    hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
+    NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
+    //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
+    NSData *data = [NSData dataWithContentsOfURL:imgURL];
+    UIImage *img = [[UIImage alloc] initWithData:data];
+    UIImageView *imageArea = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.frame.origin.x+10, self.view.frame.origin.y+10, self.view.frame.size.width-20, self.view.frame.size.height/3.5)];
+    imageArea.image = img;
+    UITextView *title = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x+10, imageArea.frame.origin.y + imageArea.frame.size.height, self.view.frame.size.width-20, 55)];
+    [title setEditable:NO];
+    [title setText:story.title];
+    [title setTextColor:[UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1]];
+    [title setBackgroundColor:[UIColor clearColor]];
+    [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
+    UITextView *articleText = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x+10, title.frame.origin.y + title.frame.size.height, self.view.frame.size.width-20, self.view.frame.size.height-title.frame.origin.y)];
+    [articleText setEditable:NO];
+    [articleText setText:story.articleText];
+    [articleText setTextColor:[UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1]];
+    [articleText setBackgroundColor:[UIColor clearColor]];
+    [articleText setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
+                                                                           
+
+    
+    //UIWebView *webView = [//[UIWebView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y-65, self.view.frame.size.width, self.view.frame.size.height+115)];
+    //[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
+    tempStoryController.view.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
+    [tempStoryController.view addSubview:imageArea];
+    [tempStoryController.view addSubview:title];
+    [tempStoryController.view addSubview:articleText];
+    //NSLog(@"link: %@", story.articleText);
     [self.navigationController pushViewController:tempStoryController animated:YES];
 }
 
