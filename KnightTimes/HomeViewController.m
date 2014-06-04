@@ -14,7 +14,6 @@
     NSMutableArray *storyViewArray;
     XMLParser *xmlParser;
     HPPLParser *hpplParser;
-    UIViewController *storyViewController;
     NSMutableDictionary *imageDictionary;
     NSDictionary *loadedImageDict;
 }
@@ -156,32 +155,39 @@
 {
     UIView *view = [sender view];
     Story *story = [[xmlParser stories] objectAtIndex:view.tag-1];
-    storyViewController = [[UIViewController alloc] init];
+    UIViewController *storyViewController = [[UIViewController alloc] init];
     storyViewController.view.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
+    UIScrollView *scrollableView = [[UIScrollView alloc] initWithFrame:storyViewController.view.frame];
     //UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y, homeView.frame.size.width, homeView.frame.size.height)];
     //[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
-    hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
+    //hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
     //NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
     //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
     //NSData *data = [NSData dataWithContentsOfURL:imgURL];
     //UIImage *img = [[UIImage alloc] initWithData:data];
-    UIImageView *imageArea = [[UIImageView alloc] initWithFrame: CGRectMake(homeView.frame.origin.x+10, homeView.frame.origin.y+75, homeView.frame.size.width-20, homeView.frame.size.height/3.5)];
-    imageArea.image = story.image;
-    UITextView *title = [[UITextView alloc] initWithFrame:CGRectMake(imageArea.frame.origin.x, imageArea.frame.origin.y + imageArea.frame.size.height, imageArea.frame.size.width, 55)];
-    [title setEditable:NO];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(scrollableView.frame.origin.x+10, scrollableView.frame.origin.y+10, scrollableView.frame.size.width-20, scrollableView.frame.size.height)];
     [title setText:story.title];
-    [title setTextColor:[UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1]];
+    //[title setEditable:NO];
+    [title setTextColor:[UIColor whiteColor]];
     [title setBackgroundColor:[UIColor clearColor]];
-    [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
-    UITextView *articleText = [[UITextView alloc] initWithFrame:CGRectMake(imageArea.frame.origin.x, title.frame.origin.y + title.frame.size.height, imageArea.frame.size.width, homeView.frame.size.height-title.frame.origin.y - 110)];
-    [articleText setEditable:NO];
+    [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 18.0f]];
+    title.numberOfLines = 0;
+    [title sizeToFit];
+    UIImageView *imageArea = [[UIImageView alloc] initWithFrame: CGRectMake(title.frame.origin.x, title.frame.origin.y + title.frame.size.height+10, scrollableView.frame.size.width-20, scrollableView.frame.size.height/3.5)];
+    imageArea.image = story.image;
+    UILabel *articleText = [[UILabel alloc] initWithFrame:CGRectMake(title.frame.origin.x, imageArea.frame.origin.y + imageArea.frame.size.height+10, scrollableView.frame.size.width-20, 200)];
     [articleText setText:story.articleText];
-    [articleText setTextColor:[UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1]];
+    [articleText setTextColor:[UIColor whiteColor]];
     [articleText setBackgroundColor:[UIColor clearColor]];
     [articleText setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
-    [storyViewController.view addSubview:imageArea];
-    [storyViewController.view addSubview:title];
-    [storyViewController.view addSubview:articleText];
+    articleText.numberOfLines = 0;
+    [articleText sizeToFit];
+    [scrollableView addSubview:imageArea];
+    [scrollableView addSubview:title];
+    [scrollableView addSubview:articleText];
+    scrollableView.contentSize = CGSizeMake(scrollableView.frame.size.width, title.frame.size.height + imageArea.frame.size.height + articleText.frame.size.height+40);
+    //scrollableView.frame.size.height = title.frame.size.height + imageArea.frame.size.height + articleText.frame.size.height;
+    [storyViewController.view addSubview:scrollableView];
     [self.navigationController pushViewController:storyViewController animated:YES];
 }
 
