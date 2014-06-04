@@ -14,7 +14,6 @@
 @interface TeamStoryListViewController () {
     XMLParser *xmlParser;
     HPPLParser *hpplParser;
-    UIViewController *tempStoryController;
     UINavigationController *navController;
     NSMutableDictionary *imageDictionary;
     NSDictionary *loadedImageDict;
@@ -134,37 +133,45 @@
     //NSLog(@"Index: %ld", (long)indexPath.item);
     [self->tableView deselectRowAtIndexPath:indexPath animated:YES];
     Story *story = [[xmlParser stories] objectAtIndex:indexPath.item];
-    tempStoryController = [[UIViewController alloc] init];
     hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
     NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
     //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
     NSData *data = [NSData dataWithContentsOfURL:imgURL];
     UIImage *img = [[UIImage alloc] initWithData:data];
-    UIImageView *imageArea = [[UIImageView alloc] initWithFrame: CGRectMake(self.view.frame.origin.x+10, self.view.frame.origin.y+10, self.view.frame.size.width-20, self.view.frame.size.height/3.5)];
-    imageArea.image = img;
-    UITextView *title = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x+10, imageArea.frame.origin.y + imageArea.frame.size.height, self.view.frame.size.width-20, 55)];
-    [title setEditable:NO];
+    UIViewController *storyViewController = [[UIViewController alloc] init];
+    storyViewController.view.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
+    UIScrollView *scrollableView = [[UIScrollView alloc] initWithFrame:storyViewController.view.frame];
+    //UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y, homeView.frame.size.width, homeView.frame.size.height)];
+    //[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
+    //hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
+    //NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
+    //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
+    //NSData *data = [NSData dataWithContentsOfURL:imgURL];
+    //UIImage *img = [[UIImage alloc] initWithData:data];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(scrollableView.frame.origin.x+10, scrollableView.frame.origin.y+10, scrollableView.frame.size.width-20, scrollableView.frame.size.height)];
     [title setText:story.title];
-    [title setTextColor:[UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1]];
+    //[title setEditable:NO];
+    [title setTextColor:[UIColor whiteColor]];
     [title setBackgroundColor:[UIColor clearColor]];
-    [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
-    UITextView *articleText = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x+10, title.frame.origin.y + title.frame.size.height, self.view.frame.size.width-20, self.view.frame.size.height-title.frame.origin.y)];
-    [articleText setEditable:NO];
+    [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 18.0f]];
+    title.numberOfLines = 0;
+    [title sizeToFit];
+    UIImageView *imageArea = [[UIImageView alloc] initWithFrame: CGRectMake(title.frame.origin.x, title.frame.origin.y + title.frame.size.height+10, scrollableView.frame.size.width-20, scrollableView.frame.size.height/3.5)];
+    imageArea.image = img;
+    UILabel *articleText = [[UILabel alloc] initWithFrame:CGRectMake(title.frame.origin.x, imageArea.frame.origin.y + imageArea.frame.size.height+10, scrollableView.frame.size.width-20, 200)];
     [articleText setText:story.articleText];
-    [articleText setTextColor:[UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1]];
+    [articleText setTextColor:[UIColor whiteColor]];
     [articleText setBackgroundColor:[UIColor clearColor]];
     [articleText setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
-                                                                           
-
-    
-    //UIWebView *webView = [//[UIWebView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y-65, self.view.frame.size.width, self.view.frame.size.height+115)];
-    //[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
-    tempStoryController.view.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
-    [tempStoryController.view addSubview:imageArea];
-    [tempStoryController.view addSubview:title];
-    [tempStoryController.view addSubview:articleText];
-    //NSLog(@"link: %@", story.articleText);
-    [self.navigationController pushViewController:tempStoryController animated:YES];
+    articleText.numberOfLines = 0;
+    [articleText sizeToFit];
+    [scrollableView addSubview:imageArea];
+    [scrollableView addSubview:title];
+    [scrollableView addSubview:articleText];
+    scrollableView.contentSize = CGSizeMake(scrollableView.frame.size.width, title.frame.size.height + imageArea.frame.size.height + articleText.frame.size.height+40);
+    //scrollableView.frame.size.height = title.frame.size.height + imageArea.frame.size.height + articleText.frame.size.height;
+    [storyViewController.view addSubview:scrollableView];
+    [self.navigationController pushViewController:storyViewController animated:YES];
 }
 
 - (void)saveImageData: (NSString *)sport
