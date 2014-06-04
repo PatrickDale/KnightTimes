@@ -33,8 +33,17 @@
 
 -(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
+    
+    /*if(nil == currentString)
+    {
+        currentString = [[NSMutableString alloc] initWithString:string];
+    } else {
+     [currentString appendString:string];
+    }*/
+    
+    
     if (!currentString) {
-        currentString = [NSMutableString string];
+        currentString = [[NSMutableString alloc] initWithCapacity:50];;
     }
         //[[NSMutableString alloc] initWithString:[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
   //  } else {
