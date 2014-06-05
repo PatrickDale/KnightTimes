@@ -15,6 +15,10 @@ What Works, IOS Specific:
 What Doesn’t Work, IOS Specific:
 	- Parsing the article text works 95% of the time, but occasionally the hpplParser will cut article text short.
 
+Features We Would Like To See:
+	-A nicer way to display the twitter feed
+	- Options/settings to make it a unique to user experience
+
 Getting Started: 
 	IOS Specific: Once the application is running on the emulator or device, you will notice three tabs at the bottom, each of them has a self described purpose. Clicking once on either will take you to their corresponding pages. Clicking once on an item bar on the sports page will take you to a list of articles, and by clicking on either of those articles or article box on the homepage you will be able to the article picked. Returning to sports list from the article view is as easy as hitting the back button on the top left corner. 
 
