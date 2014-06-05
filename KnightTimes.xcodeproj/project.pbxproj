@@ -10,7 +10,9 @@
 		D56D7EC8193D5EEA00F09168 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EC3193D5EEA00F09168 /* TFHpple.m */; };
 		D56D7EC9193D5EEA00F09168 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EC5193D5EEA00F09168 /* TFHppleElement.m */; };
 		D56D7ECA193D5EEA00F09168 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D56D7EC7193D5EEA00F09168 /* XPathQuery.m */; };
-		D56D7ECF193F11D600F09168 /* twitter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D56D7ECE193F11D600F09168 /* twitter_logo.png */; };
+		D56D7ED1193FD71500F09168 /* twitter_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D56D7ED0193FD71500F09168 /* twitter_logo.png */; };
+		D56D7ED3193FD7F800F09168 /* knight_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D56D7ED2193FD7F800F09168 /* knight_logo.png */; };
+		D56D7ED5193FD87100F09168 /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D56D7ED4193FD87100F09168 /* home_icon.png */; };
 		D56F0606193BE1360091FA3E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D56F0605193BE1360091FA3E /* libxml2.dylib */; };
 		D56F0609193C10DD0091FA3E /* HPPLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D56F0608193C10DD0091FA3E /* HPPLParser.m */; };
 		D56F060C193C3B040091FA3E /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D56F060B193C3B040091FA3E /* TwitterViewController.m */; };
@@ -52,7 +54,9 @@
 		D56D7EC5193D5EEA00F09168 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		D56D7EC6193D5EEA00F09168 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		D56D7EC7193D5EEA00F09168 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		D56D7ECE193F11D600F09168 /* twitter_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_logo.png; sourceTree = "<group>"; };
+		D56D7ED0193FD71500F09168 /* twitter_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_logo.png; sourceTree = "<group>"; };
+		D56D7ED2193FD7F800F09168 /* knight_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = knight_logo.png; sourceTree = "<group>"; };
+		D56D7ED4193FD87100F09168 /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		D56F0605193BE1360091FA3E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D56F0607193C10DD0091FA3E /* HPPLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPLParser.h; sourceTree = "<group>"; };
 		D56F0608193C10DD0091FA3E /* HPPLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPLParser.m; sourceTree = "<group>"; };
@@ -160,9 +164,11 @@
 		D59D412319342E82000C4487 /* KnightTimes */ = {
 			isa = PBXGroup;
 			children = (
-				D56D7ECE193F11D600F09168 /* twitter_logo.png */,
-				D56F05E8193BDE290091FA3E /* hppl */,
+				D56D7ED2193FD7F800F09168 /* knight_logo.png */,
+				D56D7ED0193FD71500F09168 /* twitter_logo.png */,
+				D56D7ED4193FD87100F09168 /* home_icon.png */,
 				D59D415B19344E2A000C4487 /* knightHead.jpg */,
+				D56F05E8193BDE290091FA3E /* hppl */,
 				D59D412C19342E82000C4487 /* AppDelegate.h */,
 				D59D412D19342E82000C4487 /* AppDelegate.m */,
 				D59D412F19342E82000C4487 /* Main.storyboard */,
@@ -292,10 +298,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59D415C19344E2A000C4487 /* knightHead.jpg in Resources */,
+				D56D7ED5193FD87100F09168 /* home_icon.png in Resources */,
 				D59D413619342E82000C4487 /* Images.xcassets in Resources */,
-				D56D7ECF193F11D600F09168 /* twitter_logo.png in Resources */,
+				D56D7ED1193FD71500F09168 /* twitter_logo.png in Resources */,
 				D59D412819342E82000C4487 /* InfoPlist.strings in Resources */,
 				D59D413119342E82000C4487 /* Main.storyboard in Resources */,
+				D56D7ED3193FD7F800F09168 /* knight_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

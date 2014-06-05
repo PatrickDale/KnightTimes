@@ -83,40 +83,24 @@
     
     UITableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.textLabel.textColor = [UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1];
         cell.backgroundColor =[UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    //NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-   // NSArray *sortedArray = [[sportsInfo allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]];
-   // NSString *sport = [[[sportsInfo allKeys] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sort]] objectAtIndex:indexPath.row];
     NSArray * sortedKeys = [[sportsInfo allKeys] sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
     NSString *sport = [sortedKeys objectAtIndex:indexPath.row];
     cell.textLabel.text = sport;
-    //[cell.detailTextLabel setText:sport];
-    //[cell.imageView setImage:[UIImage imageNamed:@"knightHead.jpg"]];
     cell.tag = indexPath.row;
     
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    //StoryListView *newView = [[StoryListView alloc] init];
-    //newView.theTitle = [self.tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    //[self.navigationController pushViewController:newView animated:YES];
-    //NSLog(@"Index: %@", cell.textLabel.text);
     [self->tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [self->tableView cellForRowAtIndexPath:indexPath];
     newTable = [[TeamStoryListViewController alloc]loadTableWithURL:[sportsInfo objectForKey:cell.textLabel.text] withSport:cell.textLabel.text];
-//    UITableView *view = newTable.tableView;
-//    tempStoryList = [[UIViewController alloc]init];
-//    [tempStoryList.view addSubview:view];
     [self.navigationController pushViewController:newTable animated:YES];
-//    [self.navigationController pushViewController:tempStoryList animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

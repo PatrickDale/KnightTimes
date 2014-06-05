@@ -14,8 +14,8 @@
     NSMutableArray *storyViewArray;
     XMLParser *xmlParser;
     HPPLParser *hpplParser;
-    NSMutableDictionary *imageDictionary;
-    NSDictionary *loadedImageDict;
+    NSMutableDictionary *dataDictionary;
+    NSDictionary *loadedDataDict;
 }
 @end
 
@@ -34,7 +34,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadImageData];
+    [self loadData];
+    UIImage *image = [UIImage imageNamed:@"home_icon.png"];
+    UITabBarItem *barItem = [self.tabBarController.tabBar.items objectAtIndex:0];
+    barItem.image = image;
+    image = [UIImage imageNamed:@"knight_logo.png"];
+    barItem = [self.tabBarController.tabBar.items objectAtIndex:1];
+    barItem.image = image;
+    image = [UIImage imageNamed:@"twitter_logo.png"];
+    barItem = [self.tabBarController.tabBar.items objectAtIndex:2];
+    barItem.image = image;
     xmlParser = [[XMLParser alloc] loadXMLByURL:@"http://apps.carleton.edu/athletics/feeds/blogs/varsity_athletics"];
     //Set background collor of homeview
     homeView.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
@@ -57,7 +66,6 @@
         count++;
         rightSubView.tag = count;
         count++;
-        //leftSubView.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:188.0/255.0 blue:53.0/255.0 alpha:1];
         leftSubView.backgroundColor = [UIColor whiteColor];
         //Create a gesture for each view
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognized:)];
@@ -79,42 +87,34 @@
         [storyViewArray addObject:leftSubView];
         [storyViewArray addObject:rightSubView];
     }
-    
     //Add scrollable subview with all subviews to homeview
     scrollSubView.contentSize = CGSizeMake(homeView.frame.size.width, height+105);
     self.navigationItem.title = @"Front Page";
     [homeView addSubview:scrollSubView];
-    imageDictionary = [NSMutableDictionary dictionary];
-    
-    //homeView.backgroundColor = [UIColor greenColor];
-    //UIViewController *viewController = [[UIViewController alloc] init];
-    //viewController.view.backgroundColor = [UIColor blueColor];
-    //[self.navigationController pushViewController:viewController animated:YES];
+    dataDictionary = [NSMutableDictionary dictionary];
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    //TEXT IN SUBVIEWS
     for (int i=0; i<[[xmlParser stories] count]; i++) {
         Story *story = [[xmlParser stories] objectAtIndex:i];
         //Get all necessary data
         NSData *data;
-        if ([loadedImageDict valueForKey:story.link])
+        if ([loadedDataDict valueForKey:story.link])
         {
-            data = [[loadedImageDict valueForKey:story.link] objectAtIndex:0];
-            story.title = [[loadedImageDict valueForKey:story.link] objectAtIndex:1];
-            story.articleText = [[loadedImageDict valueForKey:story.link] objectAtIndex:2];
+            data = [[loadedDataDict valueForKey:story.link] objectAtIndex:0];
+            story.title = [[loadedDataDict valueForKey:story.link] objectAtIndex:1];
+            story.articleText = [[loadedDataDict valueForKey:story.link] objectAtIndex:2];
         } else {
             hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
             NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
-            //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
             data = [NSData dataWithContentsOfURL:imgURL];
             HPPLParser *hpplStoryParser = [[HPPLParser alloc] parseHTMLByURL:story.link];
             story.title = [[hpplStoryParser articleTitle] objectAtIndex:0];
             story.articleText = [[hpplStoryParser articleText] objectAtIndex:0];
         }
-        //NSLog(@"Count: %@", story.title);
+        //TEXT IN SUBVIEWS
         UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x)-2, (((UIView*)[self.view viewWithTag:1]).frame.origin.y+((((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))), (((UIView*)[self.view viewWithTag:1]).frame.size.width)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(1.0/3.0))];
         [textLabel setText:story.title];
         [textLabel setTextColor:[UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1]];
@@ -126,24 +126,12 @@
         UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
         UIImage *img = [[UIImage alloc] initWithData:data];
         story.image = img;
-        //imageArea.image = [UIImage imageNamed:@"knightHead.jpg"];
         imageArea.image = img;
         [((UIView*)[self.view viewWithTag:i+1]) addSubview:imageArea];
         NSArray *dataArray = [[NSArray alloc] initWithObjects:data, story.title, story.articleText, nil];
-        [imageDictionary setValue:dataArray forKey:story.link];
+        [dataDictionary setValue:dataArray forKey:story.link];
     }
-    
-    //yourLabel.shadowColor = [UIColor blackColor];
-    //yourLabel.shadowOffset = CGSizeMake(0, 1.0);
-    
-    //yourLabel.lineBreakMode = NSLineBreakByCharWrapping;
-    
-    
-    //IMAGE IN SUBVIEWS
-    //UIImageView *imageArea = [[UIImageView alloc] initWithFrame:CGRectMake((((UIView*)[self.view viewWithTag:1]).frame.origin.x), (((UIView*)[self.view viewWithTag:1]).frame.origin.y)-10, (((UIView*)[self.view viewWithTag:1]).frame.size.width)-20, (((UIView*)[self.view viewWithTag:1]).frame.size.height)*(3.0/6.0))];
-    //imageArea.image = [UIImage imageNamed:@"CJ_Dale_Shot_Put.jpg"];
-    //[((UIView*)[self.view viewWithTag:1]) addSubview:imageArea];
-    [self saveImageData];
+    [self saveData];
 }
 
 /***
@@ -158,16 +146,8 @@
     UIViewController *storyViewController = [[UIViewController alloc] init];
     storyViewController.view.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     UIScrollView *scrollableView = [[UIScrollView alloc] initWithFrame:storyViewController.view.frame];
-    //UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y, homeView.frame.size.width, homeView.frame.size.height)];
-    //[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:story.link]]];
-    //hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
-    //NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
-    //NSLog( @"IMG: %@", [hpplParser.images objectAtIndex:2]);
-    //NSData *data = [NSData dataWithContentsOfURL:imgURL];
-    //UIImage *img = [[UIImage alloc] initWithData:data];
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(scrollableView.frame.origin.x+10, scrollableView.frame.origin.y+10, scrollableView.frame.size.width-20, scrollableView.frame.size.height)];
     [title setText:story.title];
-    //[title setEditable:NO];
     [title setTextColor:[UIColor whiteColor]];
     [title setBackgroundColor:[UIColor clearColor]];
     [title setFont:[UIFont fontWithName: @"Trebuchet MS" size: 18.0f]];
@@ -175,6 +155,7 @@
     [title sizeToFit];
     UIImageView *imageArea = [[UIImageView alloc] initWithFrame: CGRectMake(title.frame.origin.x, title.frame.origin.y + title.frame.size.height+10, scrollableView.frame.size.width-20, scrollableView.frame.size.height/3.5)];
     imageArea.image = story.image;
+    imageArea.contentMode = UIViewContentModeScaleAspectFit;
     UILabel *articleText = [[UILabel alloc] initWithFrame:CGRectMake(title.frame.origin.x, imageArea.frame.origin.y + imageArea.frame.size.height+10, scrollableView.frame.size.width-20, 200)];
     [articleText setText:story.articleText];
     [articleText setTextColor:[UIColor whiteColor]];
@@ -186,25 +167,22 @@
     [scrollableView addSubview:title];
     [scrollableView addSubview:articleText];
     scrollableView.contentSize = CGSizeMake(scrollableView.frame.size.width, title.frame.size.height + imageArea.frame.size.height + articleText.frame.size.height+40);
-    //scrollableView.frame.size.height = title.frame.size.height + imageArea.frame.size.height + articleText.frame.size.height;
     [storyViewController.view addSubview:scrollableView];
     [self.navigationController pushViewController:storyViewController animated:YES];
 }
 
-- (void)saveImageData
+- (void)saveData
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString  *dictPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"imageDict.out"];
-    [imageDictionary writeToFile:dictPath atomically:YES];
+    [dataDictionary writeToFile:dictPath atomically:YES];
 }
 
-- (void)loadImageData
+- (void)loadData
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString  *dictPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"imageDict.out"];
-    loadedImageDict = [NSDictionary dictionaryWithContentsOfFile:dictPath];
-    //for (NSString *key in dictFromFile)
-        //NSLog(@"---===----- %@ ---===-----", key);
+    loadedDataDict = [NSDictionary dictionaryWithContentsOfFile:dictPath];
 }
 
 - (void)didReceiveMemoryWarning
