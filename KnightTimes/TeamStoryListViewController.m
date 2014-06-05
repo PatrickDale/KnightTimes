@@ -15,8 +15,8 @@
     XMLParser *xmlParser;
     HPPLParser *hpplParser;
     UINavigationController *navController;
-    NSMutableDictionary *imageDictionary;
-    NSDictionary *loadedImageDict;
+    NSMutableDictionary *dataDictionary;
+    NSDictionary *loadedDataDict;
 }
 
 @end
@@ -39,11 +39,16 @@
     // Do any additional setup after loading the view.
 }
 
+/***
+ * Creates a UITableView listing articles given the sport
+ * @Params: NSString, NSString
+ * @Returns: id
+ ***/
 -(id) loadTableWithURL:(NSString *)urlString withSport:(NSString *)sport
 {
-    [self loadImageData:sport];
+    [self loadData:sport];
     xmlParser = [[XMLParser alloc] loadXMLByURL:urlString];
-    imageDictionary = [NSMutableDictionary dictionary];
+    dataDictionary = [NSMutableDictionary dictionary];
     [self getStoryImages];
     tableView = [[UITableView alloc] initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height)];
     self.navigationItem.title = sport;
@@ -51,20 +56,25 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     self.view = tableView;
-    [self saveImageData:sport];
+    [self saveData:sport];
     return self;
 }
 
+/***
+ * Gets images for stories, if not already stored, and resizes them to an appropriate thumbnail size
+ * @Params: none
+ * @Returns: void
+ ***/
 -(void) getStoryImages
 {
     for (int i=0; i<[[xmlParser stories] count]; i++) {
         Story *story = [[xmlParser stories] objectAtIndex:i];
         NSData *data;
-        if ([loadedImageDict valueForKey:story.link])
+        if ([loadedDataDict valueForKey:story.link])
         {
-            data = [[loadedImageDict valueForKey:story.link] objectAtIndex:0];
-            story.title = [[loadedImageDict valueForKey:story.link] objectAtIndex:1];
-            story.articleText = [[loadedImageDict valueForKey:story.link] objectAtIndex:2];
+            data = [[loadedDataDict valueForKey:story.link] objectAtIndex:0];
+            story.title = [[loadedDataDict valueForKey:story.link] objectAtIndex:1];
+            story.articleText = [[loadedDataDict valueForKey:story.link] objectAtIndex:2];
         } else {
             hpplParser = [[HPPLParser alloc] parseXMLByURL:story.link];
             NSURL *imgURL = [NSURL URLWithString:[hpplParser.images objectAtIndex:2]];
@@ -79,7 +89,7 @@
         story.image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         NSArray *dataArray = [[NSArray alloc] initWithObjects:data, story.title, story.articleText, nil];
-        [imageDictionary setValue:dataArray forKey:story.link];
+        [dataDictionary setValue:dataArray forKey:story.link];
     }
 }
 
@@ -152,18 +162,28 @@
     [self.navigationController pushViewController:storyViewController animated:YES];
 }
 
-- (void)saveImageData: (NSString *)sport
+/***
+ * Saves all data for the articles shown in memory
+ * @Params: NSString
+ * @Returns: void
+ ***/
+- (void)saveData: (NSString *)sport
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString  *dictPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:sport];
-    [imageDictionary writeToFile:dictPath atomically:YES];
+    [dataDictionary writeToFile:dictPath atomically:YES];
 }
 
-- (void)loadImageData: (NSString *)sport
+/***
+ * Loads all data for the articles previously shown from memory
+ * @Params: NSString
+ * @Returns: void
+ ***/
+- (void)loadData: (NSString *)sport
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString  *dictPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:sport];
-    loadedImageDict = [NSDictionary dictionaryWithContentsOfFile:dictPath];
+    loadedDataDict = [NSDictionary dictionaryWithContentsOfFile:dictPath];
 }
 
 - (void)didReceiveMemoryWarning

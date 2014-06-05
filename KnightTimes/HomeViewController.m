@@ -49,7 +49,6 @@
     homeView.backgroundColor = [UIColor colorWithRed:21.0/255.0 green:67.0/255.0 blue:115.0/255.0 alpha:1];
     UIScrollView *scrollSubView = [[UIScrollView alloc] initWithFrame:CGRectMake(homeView.frame.origin.x, homeView.frame.origin.y+55, homeView.frame.size.width, homeView.frame.size.height)];
     
-    
     int count = 1;
     int height = 20;
     //Create six smaller subviews
@@ -171,6 +170,11 @@
     [self.navigationController pushViewController:storyViewController animated:YES];
 }
 
+/***
+ * Saves all data for the articles shown in memory
+ * @Params: NSString
+ * @Returns: void
+ ***/
 - (void)saveData
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -178,6 +182,11 @@
     [dataDictionary writeToFile:dictPath atomically:YES];
 }
 
+/***
+ * Loads all data for the articles previously shown from memory
+ * @Params: NSString
+ * @Returns: void
+ ***/
 - (void)loadData
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -191,10 +200,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+/***
+ * Returns a height for the tile
+ * @Params: None
+ * @Returns: CGFloat
+ ***/
 - (CGFloat) box_height   {
     return homeView.frame.size.height/3;
 }
 
+/***
+ * Returns a width for the tile
+ * @Params: None
+ * @Returns: CGFloat
+ ***/
 - (CGFloat) box_width   {
     return (homeView.frame.size.width/2)-10;
 }

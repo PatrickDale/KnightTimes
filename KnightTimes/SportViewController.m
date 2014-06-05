@@ -13,7 +13,6 @@
 @interface SportViewController () {
     XMLParser *xmlParser;
     TeamStoryListViewController *newTable;
-    UIViewController *tempStoryList;
 }
 
 @end
@@ -30,6 +29,11 @@
     return self;
 }
 
+/***
+ * Creates the key value pairs for sport -> URL for sport page
+ * @Params: None
+ * @Returns: void
+ ***/
 - (void) createData {
     sportsInfo = @{
                    @"Baseball" : @"http://apps.carleton.edu/athletics/feeds/blogs/baseball",
@@ -80,7 +84,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = @"SportsCell";
-    
     UITableViewCell *cell = [self->tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
@@ -92,7 +95,6 @@
     NSString *sport = [sortedKeys objectAtIndex:indexPath.row];
     cell.textLabel.text = sport;
     cell.tag = indexPath.row;
-    
     return cell;
 }
 
