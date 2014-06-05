@@ -33,8 +33,17 @@
 
 -(void) parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
+    
+    /*if(nil == currentString)
+    {
+        currentString = [[NSMutableString alloc] initWithString:string];
+    } else {
+     [currentString appendString:string];
+    }*/
+    
+    
     if (!currentString) {
-        currentString = [NSMutableString string];
+        currentString = [[NSMutableString alloc] initWithCapacity:50];;
     }
     currentString = (NSMutableString *) [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
@@ -48,6 +57,11 @@
 
 -(void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+
+    if ([elementName isEqualToString:@"title"]) {
+        story.title = currentString;
+    }
+
     if ([elementName isEqualToString:@"pubDate"]) {
         NSRange wordRange = NSMakeRange(0, 4);
         NSArray *firstWords = [[currentString componentsSeparatedByString:@" "] subarrayWithRange:wordRange];
