@@ -13,6 +13,11 @@
 
 @synthesize images, articleTitle, articleText;
 
+/***
+ * Builds the list of images for every story given the url of the xml containing all the stories
+ * @Params: NSString
+ * @Returns: id
+ ***/
 -(id) parseXMLByURL:(NSString *) urlString
 {
     images = [[NSMutableArray alloc] init];
@@ -33,6 +38,11 @@
     return self;
 }
 
+/***
+ * Builds the list of titles and article text for every story given the url of the xml containing all the stories
+ * @Params: NSString
+ * @Returns: id
+ ***/
 -(id) parseHTMLByURL:(NSString *) urlString {
     articleTitle = [[NSMutableArray alloc] init];
     articleText = [[NSMutableArray alloc] init];
